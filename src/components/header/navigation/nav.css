@@ -1,0 +1,20 @@
+.navbar-list{
+    width: 100%;
+    background: rgb(66, 66, 66);
+    height: 26px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 9%;
+}
+
+.navbar-list li{
+    text-decoration: none;
+    margin-right: 2.1%;
+}
+
+.navbar-list li .navlink{
+    text-decoration: none;
+    color:white
+}
+

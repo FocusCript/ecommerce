@@ -1,0 +1,21 @@
+.search_wrapper{
+    width: 454px !important;
+    margin: 0 45px;
+}
+
+.search_wrapper span {
+	box-shadow:inset 0px 1px 0px 0px #7d90c4;
+	background:linear-gradient(to bottom, #b37c4a 5%, rgba(153, 115, 80, 0.863) 100%);
+	background-color:#3e4757;
+	border-radius:6px;
+	border:1px solid #32353b;
+	display:inline-block;
+	cursor:pointer;
+	color:#f2e4f2;
+	font-family:Arial;
+    font-size:15px;
+}
+.search_wrapper span:active {
+	background:linear-gradient(to bottom, #b67335c7 5%, #8f7b6a 100%);
+	background-color:#000000;
+}
