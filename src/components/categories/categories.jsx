@@ -1,18 +1,18 @@
 import React from 'react';
 import './main.css'
 
-class Catigories extends React.Component {
+class Categories extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            catigories:[ 'Computers', 'Cooking', 'Education', 'Fiction', 'Health', 'Mathematics','Medical','Reference','Sience','qwerty']
+            categories:[ 'Computers', 'Cooking', 'Education', 'Fiction', 'Health', 'Mathematics','Medical','Reference','Sience']
          }
     }
     render() { 
         return ( 
             <div className='catigories_wrapper'>
                 <ul>
-                    {this.state.catigories.map((item,index)=>{
+                    {this.state.categories.map((item,index)=>{
                         return(
                             <li key={index}>{item}</li>
                         )
@@ -23,4 +23,4 @@ class Catigories extends React.Component {
     }
 }
  
-export default Catigories;
+export default Categories;

@@ -1,5 +1,10 @@
 import React from 'react';
-import Header from './header/index'
+import Header from './header/header'
+import Navbar from '../components/navigation/nav.jsx'
+import Banner from './banner/banner.jsx'
+import LeftMenu from './left-menu/left-menu.jsx'
+import Tabs from './tabs/index.jsx'
+import Footer from './footer/footer.jsx'
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
 
 class Application extends React.Component {
@@ -11,7 +16,14 @@ class Application extends React.Component {
         return ( 
             <div>
                 <BrowserRouter>
+                    <Navbar/>
                     <Header/>
+                    <Banner/>
+                    {/* <div className='middle_side_wrapper'>
+                        <LeftMenu/>
+                        <Tabs/>
+                    </div> */}
+                    <Footer/>
                     <Switch>
                         <Route exact path='/signin'>
                             <h1>signIn</h1>

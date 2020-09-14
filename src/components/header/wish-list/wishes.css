@@ -1,0 +1,23 @@
+.wish_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    /* background: rgba(0, 0, 0, 0.096); */
+    border-left: 2px solid red;
+}
+
+.wish_wrapper h5{
+    margin-left: 8px;
+    margin-right: 8px;
+    /* position: absolute; */
+}
+
+.wish_wrapper .badge-counter{
+    font-size: 14px;
+    width: 20%;
+    margin-left: 50%;
+    margin-bottom: -8px;
+    margin-top: -10px;
+}

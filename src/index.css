@@ -19,3 +19,9 @@ li{
 a{
   text-decoration: none;
 }
+
+.middle_side_wrapper{
+  width: 1020px;
+  margin: 0 auto;
+  display: flex;
+}

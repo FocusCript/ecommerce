@@ -1,0 +1,23 @@
+.banner_wrapper{
+    max-width: 1020px;
+    background: rgb(219, 203, 203);
+    /* height: 328px; */
+    padding: 10px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.banner_wrapper .carousel_wrapper{
+    width: 716px;
+    height: 302px;
+    background: rgb(240, 234, 234);
+    margin: 0 auto;
+}
+
+.banner_wrapper .adv_wrapper{
+    width: 264px;
+    height: 304px;
+    background: rgb(65, 19, 19);
+    margin: 0 auto;
+    margin-left: 10px;
+}

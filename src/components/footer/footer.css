@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+.footer_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.books_genre_wrapper{
+    height: 354px;
+    background: #45423F;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.books_genre_wrapper ul{
+    width: 250px;
+    margin: 0;
+    background: rgb(226, 209, 209);
+}
+
+
+
+
+
+
+
+
+
+
+.payment_wrapper{
+    height: 92px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: #2f2d2e;
+    align-items: center;
+}
+.payment_wrapper p{
+    color: #f1f1f1;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: Montserrat;
+}
+.payment_wrapper .payment_logos{
+    display: flex;
+    justify-content: center;
+}
+.payment_wrapper .payment_logos img{
+    margin-left: 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.footer_end_wrapper{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    background: #2F2D2E;
+    color: #f1f1f1;
+    border-top: 1px solid rgba(0, 0, 0, 0.205);
+}
+
+.footer_end_wrapper p{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: Montserrat;
+}
