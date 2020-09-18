@@ -1,6 +1,6 @@
 .banner_wrapper{
     max-width: 1020px;
-    background: rgb(219, 203, 203);
+    /* background: rgb(219, 203, 203); */
     /* height: 328px; */
     padding: 10px;
     margin: 0 auto;
@@ -8,16 +8,39 @@
 }
 
 .banner_wrapper .carousel_wrapper{
-    width: 716px;
-    height: 302px;
-    background: rgb(240, 234, 234);
+    width: 60%;
+    /*height: 304px;*/
+    /* background: rgb(240, 234, 234); */
     margin: 0 auto;
 }
 
 .banner_wrapper .adv_wrapper{
-    width: 264px;
-    height: 304px;
-    background: rgb(65, 19, 19);
-    margin: 0 auto;
+    width: 38%;
+    /* height: 304px; */
+    /* background: rgb(65, 19, 19); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 10px;
+}
+
+@media (max-width: 900px){
+    .banner_wrapper{
+        flex-direction: column;
+    }
+    
+    .banner_wrapper .carousel_wrapper{
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .banner_wrapper .adv_wrapper{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .banner_wrapper .adv_wrapper img{
+        width: 60%;
+        margin: 0 auto;
+    }
 }

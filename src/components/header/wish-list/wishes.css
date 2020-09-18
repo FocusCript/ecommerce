@@ -6,6 +6,7 @@
     height: 70px;
     /* background: rgba(0, 0, 0, 0.096); */
     border-left: 2px solid red;
+    margin-right: 50px;
 }
 
 .wish_wrapper h5{
@@ -14,10 +15,50 @@
     /* position: absolute; */
 }
 
+.wishes_icon{
+    color: rgba(138, 150, 189, 0.5);
+}
+
 .wish_wrapper .badge-counter{
     font-size: 14px;
     width: 20%;
     margin-left: 50%;
     margin-bottom: -8px;
     margin-top: -10px;
+}
+
+
+@media (max-width: 900px){
+    .wish_wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        /* background: rgba(0, 0, 0, 0.096); */
+        border-left: 2px solid red;
+        position: relative;
+        margin: 0;
+    }
+    
+    .wish_wrapper h5{
+        display: none;
+    }
+    
+    .wishes_icon{
+        font-size: 50px;
+        margin: 0;
+        margin-left: 15px;
+        margin-right: 15px;
+        
+    }
+
+    .wish_wrapper .badge-counter{
+        font-size: 16px;
+        margin: 0;
+        
+        position: absolute;
+        top: -10%;
+        left: 60%;
+    }
+	
 }

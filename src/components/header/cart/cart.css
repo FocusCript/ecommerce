@@ -6,6 +6,13 @@
     margin-bottom: -15px;
     margin-top: -10px;
 }
+.cart_wrapper .product_counter{
+    display: none;
+}
+.cart_logo .cart_icon{
+    font-size: 27px;
+    color: teal;
+}
 .cart_logo p:nth-child(2){
     font-size: 23px;
     margin-top: 12px;
@@ -50,4 +57,36 @@
 .cart_wrapper button:hover {
 	background:linear-gradient(to bottom, #000000 5%, #3e4757 100%);
 	background-color:#000000;
+}
+
+@media (max-width: 900px){
+    .cart_wrapper .cart_logo{
+        margin: 0;
+        position: relative;
+    }
+    .cart_wrapper .product_counter{
+        display: block;
+        margin-bottom: -20px;
+        margin-left: 38px;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+        
+    }
+    .cart_logo .cart_icon{
+        font-size: 55px;
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+
+    .cart_logo p:nth-child(2){
+        display: none;
+    }
+    .cart_logo p:nth-child(3){
+        display: none;
+    }
+    
+    .price_box{
+        display: none;
+    }
 }

@@ -10,8 +10,9 @@ class CartLayout extends React.Component {
     render() { 
         return ( 
             <div className='cart_wrapper'>
+                <div className='badge-counter product_counter'><span class="badge badge-danger text-light">5</span></div>
                 <div className='cart_logo'>
-                    <Cart size='27px'/>
+                    <Cart className='cart_icon'/>
                     <p>Your Cart</p>
                     <p>(items)</p>
                 </div>

@@ -8,13 +8,30 @@
     background: #45423F;
     display: flex;
     justify-content: center;
-   
+    width: 100%;
+    margin: 0 auto;
 }
 
 .books_genre_wrapper ul{
     width: 250px;
+    margin-left: -10px;
+    /* background: rgb(226, 209, 209); */
+}
+.books_genre_wrapper ul:first-child{
+    margin-left: -40px;
+}
+.books_genre_wrapper li{
+    border-bottom: 1px solid #afb1b0;
+    color: #afb1b0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
-    background: rgb(226, 209, 209);
+    padding: 0;
+    /* background: rgba(206, 8, 8, 0.233); */
+}
+.books_genre_wrapper ul .title{
+    font-size: 20px;
+    color: #d3d3d3;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 
@@ -62,7 +79,7 @@
     height: 48px;
     background: #2F2D2E;
     color: #f1f1f1;
-    border-top: 1px solid rgba(0, 0, 0, 0.205);
+    border-top: 1px solid rgba(146, 130, 130, 0.205);
 }
 
 .footer_end_wrapper p{

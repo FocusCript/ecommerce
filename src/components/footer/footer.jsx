@@ -31,16 +31,16 @@ class Footer extends React.Component {
     render() { 
         return ( 
             <div className='footer_wrapper'>
-                <div className='books_genre_wrapper'>
+                {/* <div className='books_genre_wrapper'>
                     {this.state.data.map((item,index)=>(
-                         <ul>
-                            <p key={index}>{item.title}</p>
+                         <ul className='pt-3'>
+                            <p className='title' key={index}>{item.title}</p>
                             {item.catigories.map((_,i)=>(
                                 <li key={i+5}>{_}</li>
                             ))}
                         </ul>
                     ))}
-                </div>
+                </div> */}
                 <div className='payment_wrapper'>
                     <p>We accept all major Credit Card/Debit Card/Internet Banking</p>
                    <div className='payment_logos'>

@@ -8,3 +8,8 @@
     background: #FCFCFC
 }
 
+@media (max-width: 900px){
+    .under_navbar_box img{
+        display: none;
+    }
+}

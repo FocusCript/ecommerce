@@ -9,8 +9,8 @@ class Wishes extends React.Component {
     }
     render() { 
         return ( 
-            <div className='wish_wrapper mr-5'>
-                <Star/>
+            <div className='wish_wrapper'>
+                <Star className='wishes_icon'/>
                 <div className='badge-counter'><span class="badge badge-danger text-light">20</span></div>
                 <h5>Wishes</h5>
             </div>

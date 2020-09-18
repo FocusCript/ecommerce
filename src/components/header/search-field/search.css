@@ -19,3 +19,13 @@
 	background:linear-gradient(to bottom, #b67335c7 5%, #8f7b6a 100%);
 	background-color:#000000;
 }
+
+@media (max-width: 900px){
+	.search_wrapper{
+		min-width: 40% !important;
+		margin: 0;
+		margin-left: 20px;
+	}
+	
+	
+}

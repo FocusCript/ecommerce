@@ -6,6 +6,7 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 9%;
+    margin: 0 auto;
 }
 
 .navbar-list li{
@@ -16,5 +17,26 @@
 .navbar-list li .navlink{
     text-decoration: none;
     color:white
+}
+
+@media (max-width: 900px){
+    .navbar-list{
+        width: 100%;
+        background: rgb(66, 66, 66);
+        height: 26px;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .navbar-list li{
+        text-decoration: none;
+        margin-left: 7px;
+    }
+    
+    .navbar-list li .navlink{
+        text-decoration: none;
+        color:white;
+    }
 }
 

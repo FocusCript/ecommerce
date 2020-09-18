@@ -1,0 +1,41 @@
+.form_wrapper{
+    border: 1px solid red;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 20px 20px;
+}
+
+.form_wrapper h4{
+    text-align: center;
+}
+
+.form_wrapper span{
+    font-size: 12px;
+    color: red;
+}
+
+.form_wrapper input{
+    position: relative;
+    border: 3px solid rgba(255, 0, 0, 0.233);
+    
+}
+
+.form_wrapper input:focus{
+    border: 3px solid rgba(255, 0, 0, 0.233);
+    box-shadow: 0px 0px 0px 0px !important;
+}
+
+.form_wrapper label{
+    position: relative;
+    top: 20px;
+    left: 10px;
+    z-index: 100;
+    background-color: rgb(255, 254, 254);
+}
+
+.form_wrapper .notification_icon{
+    position: relative;
+    left: 94%;
+    top: -57px;
+}

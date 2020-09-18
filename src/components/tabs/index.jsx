@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css';
 import Tab from './tab'
 import TabNav from './tab-nav'
+import Books from '../books/books'
 
 
 class Tabs extends React.Component {
@@ -16,7 +17,7 @@ class Tabs extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className='tabs_wrapper'>
         <TabNav tabs={['Home', 'Settings', 'Profile']} selected={ this.state.selected } setSelected={ this.setSelected }>
           <Tab isSelected={ this.state.selected === 'Home' }>
             <p>Some test text</p>
@@ -25,7 +26,7 @@ class Tabs extends React.Component {
             <h1>More test text</h1>
           </Tab>
           <Tab isSelected={ this.state.selected === 'Profile' }>
-            <h3>TABS</h3>
+            <Books/>
           </Tab>
         </TabNav>
       </div>

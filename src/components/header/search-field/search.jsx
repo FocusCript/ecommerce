@@ -10,9 +10,9 @@ class SearchField extends React.Component {
     render() { 
         return ( 
             <div className='input-group search_wrapper'>
-                <input type="text" className="form-control" placeholder="Email" id="demo" name="email"/>
+                <input type="text" className="form-control" placeholder="Search field" id="demo" name="search"/>
                     <div className="input-group-append">
-                        <span className="input-group-text"><Search className='mr-2'/>Search</span>
+                        <span className="input-group-text"><Search className='mr-2'/></span>
                     </div>
             </div>
          );
