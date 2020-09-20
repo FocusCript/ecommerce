@@ -88,3 +88,17 @@
     font-size: 14px;
     font-family: Montserrat;
 }
+
+@media (max-width: 900px){
+    .payment_wrapper{
+        display: none;
+    }
+
+    .footer_end_wrapper{
+        height: 28px;
+    }
+    
+    .footer_end_wrapper p{
+        font-size: 12px;
+    }
+}

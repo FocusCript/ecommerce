@@ -7,7 +7,7 @@ class Adv extends React.Component {
         this.state = {  }
     }
     render() { 
-        return ( <div>
+        return ( <div className='d-flex justify-content-center align-items-center'>
             <img src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/9483.png" alt=""/>
         </div> );
     }

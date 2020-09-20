@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #FCFCFC
+    background: #FCFCFC;
 }
 
 @media (max-width: 900px){

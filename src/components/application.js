@@ -8,6 +8,8 @@ import Footer from './footer/footer.jsx'
 import Help from './pages/helpPage/help.jsx'
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import SignIn from './signIn/signIn';
+import SignUp from './signUp/signUp';
+import Sidebar from './right-sidebar/r-sidebar.jsx'
 
 class Application extends React.Component {
     constructor(props) {
@@ -16,19 +18,30 @@ class Application extends React.Component {
     }
     render() { 
         return ( 
-            <div className='m-0 m-auto'>
+            <div className='m-0 m-auto bg-light'>
                 <BrowserRouter>
-                    {/* <Navbar/>
-                    <Header/>
-                    <Banner/>
-                    <div className='middle_side_wrapper'>
-                        <LeftMenu/>
-                        <Tabs/>
-                    </div>
-                     <Footer/> */}
+                   <div className='navbar_wrapper'>
+                        <Navbar/>
+                   </div>
+                   <div>
+                       <Sidebar/>
+                   </div>
                     <Switch>
+                        <Route exact path='/'>
+                        <div className='mt-3'>
+                            <Header/>
+                            <Banner/>
+                            <div className='middle_side_wrapper'>
+                                <LeftMenu/>
+                                <Tabs/>
+                            </div>
+                        </div>
+                        </Route>
                         <Route exact path='/signin'>
-                            <SignIn/>
+                            <div className='sigIn_wrapper'><SignIn/></div>
+                        </Route>
+                        <Route exact path='/signup'>
+                            <div className='signUp_wrapper'><SignUp/></div>
                         </Route>
                         <Route exact path='/myAccount'>
                             <h1>myAccount Page</h1>
@@ -40,6 +53,7 @@ class Application extends React.Component {
                             <Help/>
                         </Route>
                     </Switch>
+                    <div className='footer_wrapper_fixed'><Footer/></div>
                 </BrowserRouter>
             </div>
          );

@@ -1,0 +1,13 @@
+.signup_form_wrapper .form-group{
+    margin-top: -15px !important;  
+}
+.signup_form_wrapper button{
+    margin-top: -12px !important; 
+}
+.signup_form_wrapper .showPass_box, .remember_box{
+    margin-bottom: -12px !important;  
+}
+.signup_form_wrapper .clickHere_box{
+    font-size: 14px;
+    text-align: center;
+}

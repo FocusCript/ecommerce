@@ -1,9 +1,8 @@
 import React from 'react';
-import './signIn.css'
+import './signup.css'
 import { NavLink, Redirect } from 'react-router-dom'
 import { HiCheck } from 'react-icons/hi'
 import { RiErrorWarningLine } from 'react-icons/ri'
-import { FcGoogle } from 'react-icons/fc'
 import validator from 'validator'
 
 const data = [
@@ -19,27 +18,26 @@ const data = [
     }
 ]
 
-class SignIn extends React.Component {
+class SignUp extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
             email: null,
             password: null,
+            cpassword: null,
             errors: {
                 email: null,
                 password: null,
+                cpassword: null
             },
-            showPassword: false,
+            showPassword: true,
             loggedIn: null,
             rememberUser: false
          }
     }
 
     componentDidMount() {
-        const newState = {...this.state}
-        newState.email = localStorage.getItem('email')
-        newState.password = localStorage.getItem('password')
-        this.setState(newState)
+        
     }
       
     handleSetValue=(e)=>{
@@ -47,7 +45,7 @@ class SignIn extends React.Component {
         this.setState({
             ...this.state,
             [name]: value
-        },this.checkValues(name, value))
+        },()=>{this.checkValues(name, value)})
     }
 
     checkValues=(name, value)=>{
@@ -57,17 +55,23 @@ class SignIn extends React.Component {
                 newState.errors.email = false
             }else{
                 newState.errors.email = true
-            }
-            this.setState(newState)
+            } 
         }
         else if(name === 'password'){
-            if(validator.isByteLength(value,{min: 7, max: 20})===true){
+            if(validator.isByteLength(value,{min: 8, max: 20})===true){
                 newState.errors.password = false
             }else{
                 newState.errors.password = true
-            }
-            this.setState({newState})
+            } 
         }
+        else if(name === 'cpassword'){
+            if( this.state.password === this.state.cpassword){
+                newState.errors.cpassword = false
+            }else{
+                newState.errors.cpassword = true
+            }
+        }
+        this.setState({newState})
     }
 
     handleSubmit=(e)=>{
@@ -75,46 +79,40 @@ class SignIn extends React.Component {
         const user = data.find((item)=>{
             return item.email === this.state.email
         })
-       if( !!user && !!this.state.password && user.password === this.state.password){
+       if( !user && !!this.state.password){
             this.setState({...this.state, loggedIn: true})
             if(this.state.rememberUser){
-                localStorage.setItem('email', user.email)
-                localStorage.setItem('password', user.password)
+                localStorage.setItem('email', this.state.email)
+                localStorage.setItem('password', this.state.password)
             }
-            console.log('is Valid')
+            console.log('Registrated successful')
         }else{
-            this.setState({...this.state, loggedIn: false}) 
-            console.log('invalid')
+            const newState = {...this.state}
+            newState.errors.email = true
+            this.setState(newState)
+            alert('this email has registrated')
         }    
     }
 
     showPassword=(e)=>{
         const newState = { ...this.state}
         newState.showPassword = e.target.checked
-        this.setState(newState,()=>{
-            console.log(this.state.showPassword)
-        })
+        this.setState(newState)
     }
     remenberUser=(e)=>{
         const newState = { ...this.state}
         newState.rememberUser = e.target.checked
-        this.setState(newState,()=>{
-            console.log(this.state.rememberUser)
-        })
-    }
-
-    googleAuth=()=>{
-        alert('Google')
+        this.setState(newState)
     }
 
     render() { 
         if (this.state.loggedIn) {
-            return <Redirect to="/" />;
+            return <Redirect to="/signIn" />;
           }
         
         return ( 
-           <div className='form_wrapper'>
-               <h4>SignIn</h4>
+           <div className='signup_form_wrapper form_wrapper'>
+               <h4>SignUP</h4>
                 <form onSubmit={e=>{this.handleSubmit(e)}}>
                 <div className="form-group">
                     <label for="email">Email:</label>
@@ -142,9 +140,25 @@ class SignIn extends React.Component {
                         id="pwd"
                         onChange={e=>this.handleSetValue(e)}
                     />
-                    <span>(This is password rules)</span> 
+                    <span>(This is password rules)</span>
                     { this.state.password !== null && this.state.errors.password===true && <div className='notification_icon'><RiErrorWarningLine color='red'/></div>}
                     { this.state.password !== null && this.state.errors.password===false && <div className='notification_icon'><HiCheck color='blue'/></div>}
+                
+                </div>
+
+                <div className="form-group">
+                    <label for="c-pwd">Confirm Password:</label>
+                    <input
+                        name='cpassword' 
+                        type={this.state.showPassword ? "text" : 'password'} 
+                        value={this.state.cpassword}
+                        className="form-control" 
+                        id="c-pwd"
+                        onChange={e=>this.handleSetValue(e)}
+                    />
+                    <span>(This is password rules)</span>
+                    { this.state.errors.cpassword===true && <div className='notification_icon'><RiErrorWarningLine color='red'/></div>}
+                    { this.state.errors.cpassword===false && <div className='notification_icon'><HiCheck color='blue'/></div>}
                 
                 </div>
                 <div className="form-group form-check">
@@ -154,25 +168,19 @@ class SignIn extends React.Component {
                             <p>Remember me</p>
                         </div>
                          <div className='showPass_box d-flex'>
-                            <input className="form-check-input" type="checkbox" onChange={ e=>this.showPassword(e) }/>
+                            <input className="form-check-input" type="checkbox" checked={this.state.showPassword} onChange={ e=>this.showPassword(e) }/>
                             <p>show password</p>
                         </div>
                     </div>
                 </div>
-               <div className='links'>
-                   <NavLink to='/forgotpassword'>Frogot Password?</NavLink>
-                   <NavLink to='/SignUP'>Registration</NavLink>
-               </div>
 
-                <button className="btn btn-primary w-100">Submit</button>
-                <div className='d-flex justify-content-center align-items-center'>
-                    <div className='btn w-100 mt-2 mb-4 bg-dark' onClick={this.googleAuth}><FcGoogle size='20px'/><b className='ml-1 text-white'>Login with Google</b></div>
-                </div>
+                <button className="btn btn-primary w-100 mb-2">Submit</button>
                
+                <div className='clickHere_box' >You have already any account? <NavLink to='/signIn' >Click here</NavLink></div>
                 </form>
            </div>
          );
     }
 }
  
-export default SignIn;
+export default SignUp;

@@ -10,8 +10,8 @@
     display: none;
 }
 .cart_logo .cart_icon{
-    font-size: 27px;
-    color: teal;
+    font-size: 37px;
+    color: rgb(123, 182, 67);
 }
 .cart_logo p:nth-child(2){
     font-size: 23px;

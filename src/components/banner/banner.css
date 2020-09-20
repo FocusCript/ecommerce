@@ -26,11 +26,10 @@
 
 @media (max-width: 900px){
     .banner_wrapper{
-        flex-direction: column;
+        
     }
     
     .banner_wrapper .carousel_wrapper{
-        width: 80%;
         margin: 0 auto;
     }
     

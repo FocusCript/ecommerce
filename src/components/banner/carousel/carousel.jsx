@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './carousel.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import foto1 from '../../../components/book-images/how-i-build.gif'
+import foto1 from '../../../components/book-images/akkusticheskie-kabel.jpg'
 import foto2 from '../../../components/book-images/the5wake.gif'
 import foto3 from '../../logos/book_logo.png'
 
@@ -13,35 +13,28 @@ class Carouserl extends Component {
     }
     render() { 
         return ( 
-            <Carousel className='carousel_' infiniteLoop useKeyboardArrows autoPlay>
+            <Carousel className='carousel_' infiniteLoop autoPlay>
                 <div>
-                    <img src="http://lorempixel.com/640/480/sports/1" alt='image'/>
+                    <img src={foto1} alt='imageno'/>
                     <p className="legend">Legend 1</p>
                 </div>
                 <div>
-                    <img src="http://lorempixel.com/640/480/sports/2" alt='image'/>
-                    <p className="legend">Legend 2</p>
+                    <img src={foto1} alt='imageno'/>
+                    <p className="legend">Legend 1</p>
                 </div>
                 <div>
-                    <img src="http://lorempixel.com/640/480/sports/3" alt='image'/>
-                    <p className="legend">Legend 3</p>
+                    <img src={foto1} alt='imageno'/>
+                    <p className="legend">Legend 1</p>
                 </div>
                 <div>
-                    <img src="http://lorempixel.com/640/480/sports/5" alt='image'/>
-                    <p className="legend">Legend 3</p>
+                    <img src={foto1} alt='imageno'/>
+                    <p className="legend">Legend 1</p>
                 </div>
                 <div>
-                    <img src="http://lorempixel.com/640/480/sports/6" alt='image'/>
-                    <p className="legend">Legend 3</p>
+                    <img src={foto1} alt='imageno'/>
+                    <p className="legend">Legend 1</p>
                 </div>
-                <div>
-                    <img src="http://lorempixel.com/640/480/sports/7" alt='image'/>
-                    <p className="legend">Legend 3</p>
-                </div>
-                <div>
-                    <img src="http://lorempixel.com/640/480/sports/8" alt='image'/>
-                    <p className="legend">Legend 3</p>
-                </div>
+                
             </Carousel>
          );
     }

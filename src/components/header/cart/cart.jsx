@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cart, Star } from 'react-bootstrap-icons';
+import { RiShoppingCartFill } from 'react-icons/ri'
 import './cart.css'
 
 class CartLayout extends React.Component {
@@ -12,7 +12,7 @@ class CartLayout extends React.Component {
             <div className='cart_wrapper'>
                 <div className='badge-counter product_counter'><span class="badge badge-danger text-light">5</span></div>
                 <div className='cart_logo'>
-                    <Cart className='cart_icon'/>
+                    <RiShoppingCartFill className='cart_icon'/>
                     <p>Your Cart</p>
                     <p>(items)</p>
                 </div>

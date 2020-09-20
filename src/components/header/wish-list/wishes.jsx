@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star } from 'react-bootstrap-icons'
+import { BsStarFill } from 'react-icons/bs'
 import './wishes.css'
 
 class Wishes extends React.Component {
@@ -10,7 +10,7 @@ class Wishes extends React.Component {
     render() { 
         return ( 
             <div className='wish_wrapper'>
-                <Star className='wishes_icon'/>
+                <BsStarFill className='wishes_icon'/>
                 <div className='badge-counter'><span class="badge badge-danger text-light">20</span></div>
                 <h5>Wishes</h5>
             </div>

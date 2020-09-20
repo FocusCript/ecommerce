@@ -160,9 +160,9 @@ class Help extends React.Component {
         // const { data, openText} = this.state
         return ( 
         <div>
-            <Navbar/>
+            
                 {this.reqRes()}
-            <Footer/>
+            
         </div> 
         );
     }
