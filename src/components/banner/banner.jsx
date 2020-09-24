@@ -4,10 +4,6 @@ import './banner.css';
 import Carousel from './carousel/carousel'
 
 class Banner extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
     render() { 
         return ( 
             <div className='banner_wrapper'>
@@ -21,5 +17,4 @@ class Banner extends React.Component {
          );
     }
 }
- 
 export default Banner;

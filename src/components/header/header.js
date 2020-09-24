@@ -2,7 +2,7 @@ import React from 'react';
 import book_logo from '../logos/book_logo.png'
 import SearchField from './search-field/search';
 import Categories from '../categories/categories.jsx'
-import CartLayout from './cart/cart.jsx'
+import CartLayout from './cart/cart-container'
 import Wishes from './wish-list/wishes'
 import './header.css'
 

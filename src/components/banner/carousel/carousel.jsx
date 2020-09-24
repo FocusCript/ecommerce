@@ -1,43 +1,82 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './carousel.css';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
-import foto1 from '../../../components/book-images/akkusticheskie-kabel.jpg'
-import foto2 from '../../../components/book-images/the5wake.gif'
-import foto3 from '../../logos/book_logo.png'
+import foto1 from '../../../components/book-images/the5wake.gif'
+import foto2 from '../../../components/book-images/susana.gif'
+import foto3 from '../../../components/book-images/palm-beach.gif'
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption
+} from 'reactstrap';
 
-class Carouserl extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
-    render() { 
-        return ( 
-            <Carousel className='carousel_' infiniteLoop autoPlay>
-                <div>
-                    <img src={foto1} alt='imageno'/>
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src={foto1} alt='imageno'/>
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src={foto1} alt='imageno'/>
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src={foto1} alt='imageno'/>
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src={foto1} alt='imageno'/>
-                    <p className="legend">Legend 1</p>
-                </div>
-                
-            </Carousel>
-         );
-    }
+const items = [
+  {
+    src: foto1,
+    altText: 'Slide 1',
+    caption: 'Slide 1'
+  },
+  {
+    src: foto2,
+    altText: 'Slide 2',
+    caption: 'Slide 2'
+  },
+  {
+    src: foto3,
+    altText: 'Slide 3',
+    caption: 'Slide 3'
+  }
+];
+
+const Carouserl = (props) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  const next = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  }
+
+  const previous = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
+  }
+
+  const goToIndex = (newIndex) => {
+    if (animating) return;
+    setActiveIndex(newIndex);
+  }
+
+  const slides = items.map((item) => {
+    return (
+      <CarouselItem
+        className='text-center bg_carousel'
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={item.index+1}
+      >
+        <img src={item.src} alt={item.altText} height='300px'/>
+        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+      </CarouselItem>
+    );
+  });
+
+  return (
+    <Carousel
+        className='carousel'
+        activeIndex={activeIndex}
+        next={next}
+        previous={previous}
+        >
+            <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+            {slides}
+            <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+            <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+        </Carousel>
+  );
 }
- 
-export default Carouserl
+
+export default Carouserl;

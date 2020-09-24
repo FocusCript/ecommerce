@@ -31,17 +31,78 @@
 
   .books_wrapper{
     display: block;
-    height: 800px;
-    /* width: 200px; */
-    background: #000;
+    
   }
-  .books_wrapper div{
+
+  .books_wrapper .book_wrapper{
     float: left;
-    margin-left: 10px;
+    margin-left: 16px;
   }
 
   .paginate_wrapper{
+    display: flex;
+    align-items: center;
     position: relative;
     top: 100%;
-    left: 20%;
+  }
+
+  @media (min-width: 951px) and (max-width: 1000px){
+    .books_wrapper{
+      padding-left: 50px;
+    }
+  }
+  @media (min-width: 901px) and (max-width: 950px){
+    .books_wrapper{
+      padding-left: 30px;
+    }
+  }
+  @media (min-width: 849px) and (max-width: 900px){
+    .books_wrapper{
+      padding-left: 80px;
+    }
+  }
+  @media (min-width: 801px) and (max-width: 850px){
+    .books_wrapper{
+      padding-left: 50px;
+    }
+  }
+  @media (min-width: 751px) and (max-width: 800px){
+    .books_wrapper{
+      padding-left: 40px;
+    }
+  }
+  @media (min-width: 700px) and (max-width: 751px){
+    .books_wrapper{
+      padding-left: 20px;
+    }
+  }
+  @media (min-width: 631px) and (max-width: 671px){
+    .books_wrapper{
+      padding-left: 55px;
+    }
+  }
+  @media (min-width: 560px) and (max-width: 630px){
+    .books_wrapper{
+      padding-left: 25px;
+    }
+  }
+  @media (min-width: 480px) and (max-width: 506px){
+    .books_wrapper{
+      padding-left: 60px;
+    }
+  }
+  @media (min-width: 440px) and (max-width: 481px){
+    .books_wrapper{
+      padding-left: 50px;
+    }
+  }
+  @media (min-width: 400px) and (max-width: 441px){
+    .books_wrapper{
+      padding-left: 35px;
+    }
+  }
+  @media (max-width: 341px){
+    .books_wrapper{
+      padding-left: 70px;
+    }
   }

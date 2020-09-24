@@ -1,16 +1,10 @@
 import React from 'react';
 import './adv.css'
 
-class Adv extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
-    render() { 
+const Adv = ()=>{ 
         return ( <div className='d-flex justify-content-center align-items-center'>
-            <img src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/9483.png" alt=""/>
+            <img src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/9483.png" alt="noADV" width='280px'/>
         </div> );
-    }
 }
  
 export default Adv;

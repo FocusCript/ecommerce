@@ -10,14 +10,14 @@
 .banner_wrapper .carousel_wrapper{
     width: 60%;
     /*height: 304px;*/
-    /* background: rgb(240, 234, 234); */
+    background: rgb(240, 234, 234);
     margin: 0 auto;
 }
 
 .banner_wrapper .adv_wrapper{
     width: 38%;
     /* height: 304px; */
-    /* background: rgb(65, 19, 19); */
+    background: rgba(201, 218, 207, 0.61);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,14 +25,9 @@
 }
 
 @media (max-width: 900px){
-    .banner_wrapper{
-        
-    }
-    
     .banner_wrapper .carousel_wrapper{
         margin: 0 auto;
     }
-    
     .banner_wrapper .adv_wrapper{
         width: 100%;
         margin: 0 auto;

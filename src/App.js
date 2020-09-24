@@ -1,11 +1,12 @@
 import React from 'react';
 import Application from './components/application';
 
+
 function App() {
   return (
-    <React.Fragment>
+    <div>
       <Application/>
-    </React.Fragment>
+    </div>
   );
 }
 

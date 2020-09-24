@@ -11,6 +11,10 @@ body {
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, p{
+  cursor: default;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -29,7 +33,7 @@ a{
 }
 
 .middle_side_wrapper{
-  width: 1020px;
+  max-width: 1020px;
   margin: 0 auto;
   display: flex;
 }
@@ -62,4 +66,19 @@ a{
     justify-content: center;
     align-items: center;
   }
+}
+
+
+.modal_icons{
+  background: rgba(10, 114, 72, 0.384);
+  position: fixed;
+  top: 40vh;
+  right: 0;
+  z-index: 2300;
+  padding: 4px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }

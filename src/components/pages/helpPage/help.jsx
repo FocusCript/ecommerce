@@ -1,9 +1,5 @@
 import React from 'react';
-import Footer from '../../footer/footer';
-import Navbar from '../../navigation/nav';
 import './help.css'
-import { ChevronRight } from 'react-bootstrap-icons'
-import { ChevronDown } from 'react-bootstrap-icons'
 
 class Help extends React.Component {
     constructor(props) {
@@ -11,100 +7,110 @@ class Help extends React.Component {
         this.state = { 
             data:[
                 {
-                    category: 'Shoping',
+                    category: 'ACCOUNT HELP',
                     textList: [
                         {
-                            req: 'How do i find a book?',
+                            req: 'I have a Loyalty Card but cannot log in.',
                             answer: "We've made searching for titles simple but powerful. Begin by  a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'123'
                         },
                         {
-                            req: 'How do i find a book?',
+                            req: 'I want to create an account.',
                             answer: "We've made searching for titles simple . Begin by typing an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'1323'
                         },
                         {
-                            req: 'How do i find a book?',
+                            req: 'How do I log in?',
                             answer: "We've made searching for  but powerful. Begin by typing an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'1243'
                         },
                     ]
                 },
                 {
-                    category: 'Payment',
+                    category: 'ORDER HELP / ISSUES',
                     textList: [
                         {
-                            req: 'How do i find a book?',
+                            req: 'How do I place an order?',
                             answer: "We'vple but powerful. Begin by  a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'23452'
                         },
                         {
-                            req: 'How do i find a book?',
+                            req: 'Can I pick up my order from a local store?',
                             answer: "We've made searching forping an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'1231111'
                         },
                         {
-                            req: 'How do i find a book?',
+                            req: 'How do I order a Gift Voucher online?',
+                            answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
+                            id:'q32354'
+                        },
+                        {
+                            req: 'I want to order multiple / bulk quantities.',
+                            answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
+                            id:'q32354'
+                        },
+                        {
+                            req: 'I am pre-ordering a product, will you send the order together?',
+                            answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
+                            id:'q32354'
+                        },
+                        {
+                            req: 'Do you sell eBooks?',
                             answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'q32354'
                         },
                     ]
                 },
                 {
-                    category: 'Search',
+                    category: 'PAYMENTS',
                     textList: [
                         {
-                            req: 'How do i find a book?',
+                            req: 'What payment options do you allow?',
                             answer: "We'vple but powerful. Begin by  a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'12335dfg'
                         },
                         {
-                            req: 'How do i find a book?',
+                            req: 'Can I use my Loyalty credit online?',
                             answer: "We've made searching forping an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'dfgyu312'
                         },
-                        {
-                            req: 'How do i find a book?',
-                            answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'3245gjjk'
-                        },
                     ]
                 },
                 {
-                    category: 'LogOut',
+                    category: 'RETURNS',
                     textList: [
                         {
-                            req: 'How do i find a book?',
+                            req: 'How do I make a return?',
                             answer: "We'vple but powerful. Begin by  a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'236fgh13'
                         },
-                        {
-                            req: 'How do i find a book?',
-                            answer: "We've made searching forping an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'341jj'
-                        },
-                        {
-                            req: 'How do i find a book?',
-                            answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'36j24'
-                        },
                     ]
                 },
                 {
-                    category: 'Registration',
+                    category: 'DELIVERY HELP',
                     textList: [
                         {
-                            req: 'How do i find a book?',
+                            req: 'Do I have to pay for shipping?',
                             answer: "We'vple but powerful. Begin by  a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'qweqw11'
                         },
                         {
-                            req: 'How do i find a book?',
+                            req: 'When will my order be shipped?',
                             answer: "We've made searching forping an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'weeeq'
                         },
                         {
-                            req: 'How do i find a book?',
+                            req: 'Do you ship outside of Australia??',
+                            answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
+                            id:'1243qqq'
+                        },
+                        {
+                            req: 'How do I track my order?',
+                            answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
+                            id:'1243qqq'
+                        },
+                        {
+                            req: 'Do you offer Express Post?',
                             answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
                             id:'1243qqq'
                         },
@@ -115,26 +121,19 @@ class Help extends React.Component {
     }
 
     componentDidMount(){
-        this.setKeysProp()
+        
     }
 
-    setKeysProp = ()=>{
-        this.state.data.map((_,i)=>{
-            this.setState({ [_.id]: false })
-        })
-    }
-
-    handleSwitch = (e, itemId)=>{
+    handleSwitch = (e)=>{
         const { id } = e.target
         this.setState({
             [id]: !this.state[id]
         })
-        console.log(itemId)
     }
 
     reqRes() {
         return (
-            <div>
+            <div className='pb-5'>
                 <div className='d-flex justify-content-center mt-5 mb-3'><h2>Help & Support</h2></div>
                 {this.state.data.map((_,i)=>(
                    <div className='reqResText_wrapper'>
@@ -147,7 +146,7 @@ class Help extends React.Component {
                                
                                 <h4  id={item.id} onClick={e=>this.handleSwitch(e)}>{item.req}</h4>
                              </div>
-                                <p className={this.state[item.id] ? '' : 'd-none'}>{item.answer}</p>
+                                { this.state[item.id] && <p>{item.answer}</p>}
                           </div>
                        ))}
                    </div>
@@ -157,12 +156,9 @@ class Help extends React.Component {
     }
 
     render() { 
-        // const { data, openText} = this.state
         return ( 
         <div>
-            
-                {this.reqRes()}
-            
+            {this.reqRes()}
         </div> 
         );
     }

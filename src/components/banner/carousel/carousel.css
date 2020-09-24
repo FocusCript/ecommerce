@@ -1,21 +1,4 @@
-.carousel_{
-    margin-top: -120px;
-    margin-bottom: -150px;
-    width: 100%;
-    transform: scale(0.7);
-    -webkit-transform: scale(0.7);
-    -moz-transform: scale(0.7);
-    -ms-transform: scale(0.7);
-    -o-transform: scale(0.7);
-}
-.carousel_ img{
-    
-}
-
-@media (max-width: 900px){
-    .carousel_{
-        margin: 0;
-        width: 100%;
-      
-    }
+.carousel{
+    width: 300px;
+    margin: 0 auto;
 }
