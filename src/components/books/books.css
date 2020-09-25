@@ -44,6 +44,28 @@
     align-items: center;
     position: relative;
     top: 100%;
+    
+  }
+
+  .add_icon{
+    position: relative;
+    left: 16px;
+    top: 239px;
+    color: rgba(73, 11, 243, 0.747);
+    background: rgba(235, 230, 230, 0.801);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+  .like_icon{
+    position: relative;
+    left: 35px;
+    top: 85px;
+    color: rgba(241, 226, 8, 0.932);
+    
   }
 
   @media (min-width: 951px) and (max-width: 1000px){

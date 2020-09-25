@@ -5,6 +5,9 @@ import { CgMoveLeft, CgMoveRight  } from 'react-icons/cg'
 import { FiChevronsLeft, FiChevronsRight  } from 'react-icons/fi'
 import { data }  from '../../data/books'
 import Ribbon from '../ribbon/ribbon';
+import { AiFillPlusCircle } from 'react-icons/ai'
+import { AiOutlineStar, AiTwotoneStar } from 'react-icons/ai'
+import { MdRemoveCircle } from 'react-icons/md'
 
 export default class Books extends Component {
     constructor(props) {
@@ -22,45 +25,56 @@ export default class Books extends Component {
         this.receivedData()     
     }
 
-    addToCart = async (item)  => {
+    addToCart = async (item) => {
         await this.props.addToCart(item)
+        await this.props.countCart()
+        await this.props.getCartPrice()
     }
 
-    reduceCartCounts(){
-        let totalCartCount = 0;
-        const { cartList } = this.props
-        for (let i = 0; i < cartList.length; i++) {
-            totalCartCount +=  cartList[i].cartCounter
-        }
-        return this.setState({totalCartCount})
+    addToWishList = async (item) => {
+        await this.props.addToWishList(item)
+        await this.props.countWishList()
     }
-  
-    reduceWishCounts(){
-        let totalwishCount = 0;
-        const { wishList } = this.props
-        for (let i = 0; i < wishList.length; i++) {
-            totalwishCount +=  wishList[i].totalwishCount
-        }
-        return this.setState({totalwishCount})
+
+    deleteFromWishList = async (item)=>{
+        await this.props.deleteFromWishList(item)
+        await this.props.countWishList()
+      }
+      
+    deleteFromCart = async (item)=>{
+        await this.props.deleteFromCart(item)
+        await this.props.countCart()
     }
 
     receivedData() {   
-        const slice = this.props.data.slice(this.state.offset, this.state.offset + this.state.perPage)
-        const postData = slice.map((item, index) => 
-        <div key={index+1} className='book_wrapper text-center cursor-pointer'>
-            <button className='btn btn-primary' onClick={()=>this.addToCart(item)}>CArt+</button>
-            <button className='btn btn-primary' onClick={()=>this.props.addToWishList(item)}>Wish+</button>
-            <p>{item.price}</p>
-            <h6>{item.title}</h6>
-            <img src={item.image} width='150px' height='200px' alt="noImage"/>
-            <Ribbon price={item.product_details.price}/>
-        </div>)
-
+        const postData = this.parsingData()
         this.setState({
             pageCount: Math.ceil(data.length / this.state.perPage),   
             postData
         })   
     }
+    
+
+    parsingData(){
+        const slice = this.props.data.slice(this.state.offset, this.state.offset + this.state.perPage)
+        const postData = slice.map((item, index) => 
+        <div key={index+1} className='book_wrapper text-center cursor-pointer'>
+            { this.props.cartList.findIndex(i=> i.id === item.id) > -1 ? 
+                <MdRemoveCircle className='cursor-pointer add_icon' onClick={()=>this.deleteFromCart(item)} size='35px'/> :
+                <AiFillPlusCircle className='cursor-pointer add_icon' onClick={()=>this.addToCart(item)} size='35px'/>
+                 }
+
+            { this.props.wishList.findIndex(i=> i.id === item.id) > -1 ? 
+                <AiTwotoneStar className='cursor-pointer like_icon' onClick={()=>this.deleteFromWishList(item)} size='40px'/> :
+                <AiOutlineStar className='cursor-pointer like_icon' onClick={()=>this.addToWishList(item)} size='40px'/> }
+            <p>{item.price}</p>
+            <h6>{item.title}</h6>
+            <img src={item.image} width='150px' height='200px' alt="noImage"/>
+            <Ribbon price={item.product_details.price}/>
+        </div>)
+        return postData
+    }
+
     handlePageClick = (e) => {
         const selectedPage = e.selected;
         const offset = selectedPage * this.state.perPage;
@@ -103,7 +117,7 @@ export default class Books extends Component {
                     <div className='paginate_wrapper ml-2 cursor-pointer'>
                         <CgMoveRight size='30px' onClick={this.openPages}/>
                     </div>}
-                <div className='books_wrapper'>{this.state.postData}</div>
+                <div className='books_wrapper'>{this.parsingData()}</div>
             </div>
         )
     }

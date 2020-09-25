@@ -8,3 +8,9 @@
     left: 23px;
     cursor: pointer;
 }
+
+@media (max-width: 991px){
+    .mobil_view_none{
+        display: none;
+    }
+}

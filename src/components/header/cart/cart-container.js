@@ -4,12 +4,15 @@ import { connect } from 'react-redux'
 import { OpenCartModal }  from '../../../redux/actions'
 
 function mapStateToProps(state) {
-    const { wishList, cartList, openCart, books } = state.booksReducer
+    const { wishList, cartList, openCart, books, totalCountCart, totalCountWishList, totalPriceCart } = state.booksReducer
     return {
       cartList,
       wishList,
       openCart,
-      books
+      books,
+      totalCountCart,
+      totalCountWishList,
+      totalPriceCart
     }
 }
 

@@ -5,17 +5,25 @@ import { OpenCartModal,
     DeleteFromCart, 
     DeleteFromWishList, 
     IncrementCartProducts,
-    DecrementCartProducts } from '../../redux/actions/index.js';
+    DecrementCartProducts,
+    IncrementWishListProducts,
+    DecrementWishListProducts,
+    countWishList,
+    countCart,
+    getCartPrice    } from '../../redux/actions/index.js';
 import ModalList from './modal.jsx'
 
 const mapStateToProps=(state)=>{
-    const { openCart, openWishList, wishList, cartList, books } = state.booksReducer
+    const { openCart, openWishList, wishList, cartList, books, totalCountCart, totalCountWishList, totalPriceCart } = state.booksReducer
     return {
         openCart,
         openWishList,
         cartList,
         wishList,
-        books
+        books,
+        totalCountCart,
+        totalCountWishList,
+        totalPriceCart
     }
 }
 
@@ -25,7 +33,13 @@ const mapDispatchToProps=(dispatch)=>({
     deleteFromWishList: (any) => dispatch(DeleteFromWishList(any)),
     deleteFromCart: (any) => dispatch(DeleteFromCart(any)),
     incrementCartProducts: (any) => dispatch(IncrementCartProducts(any)),
-    decrementCartProducts: (any) => dispatch(DecrementCartProducts(any))
+    decrementCartProducts: (any) => dispatch(DecrementCartProducts(any)),
+    incrementWishListProducts: (any) => dispatch(IncrementWishListProducts(any)),
+    decrementWishListProducts: (any) => dispatch(DecrementWishListProducts(any)),
+    countCart: () => dispatch(countCart()),
+    countWishList: () => dispatch(countWishList()),
+    getCartPrice: () => dispatch(getCartPrice())
+
 })
 
 

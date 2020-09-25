@@ -9,9 +9,9 @@ class Wishes extends React.Component {
     }
     render() { 
         return ( 
-            <div className='wish_wrapper'>
+            <div className='wish_wrapper cursor-pointer' onClick={this.props.openWishListModal} >
                 <BsStarFill className='wishes_icon'/>
-                <div className='badge-counter'><span class="badge badge-danger text-light">20</span></div>
+            <div className='badge-counter'><span class="badge badge-danger text-light">{this.props.totalCountWishList}</span></div>
                 <h5>Wishes</h5>
             </div>
          );

@@ -1,4 +1,4 @@
-import {FETCH_BOOKS, 
+import {    FETCH_BOOKS, 
     ADD_TO_CART, 
     ADD_TO_WISHLIST, 
     DELETE_FROM_WISHLIST, 
@@ -6,8 +6,14 @@ import {FETCH_BOOKS,
     OPEN_CART, 
     OPEN_WISHLIST,
     INCREMENT_CART_PRODUCTS,
-    DECREMENT_CART_PRODUCTS
-} from './action_types';
+    DECREMENT_CART_PRODUCTS,
+    DECREMENT_WISHLIST_PRODUCTS,
+    INCREMENT_WISHLIST_PRODUCTS,
+    GET_CART_COUNTS,
+    GET_WISHLIST_COUNTS,
+    GET_TOTAL_PRICE_CART    } from './action_types';
+
+
 
 export const FetchBooks = () => ({
     type: FETCH_BOOKS
@@ -51,5 +57,27 @@ export const IncrementCartProducts = (payload) =>({
 export const DecrementCartProducts = (payload) =>({
     type: DECREMENT_CART_PRODUCTS,
     payload
+})
+export const IncrementWishListProducts = (payload) =>({
+    type: INCREMENT_WISHLIST_PRODUCTS,
+    payload
+})
+
+export const DecrementWishListProducts = (payload) =>({
+    type: DECREMENT_WISHLIST_PRODUCTS,
+    payload
+})
+
+export const countCart = () =>({
+    type: GET_CART_COUNTS,
+})
+
+export const countWishList = () =>({
+    type: GET_WISHLIST_COUNTS,
+})
+
+
+export const getCartPrice = () =>({
+    type: GET_TOTAL_PRICE_CART,
 })
 
