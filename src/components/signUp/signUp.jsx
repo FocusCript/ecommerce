@@ -32,7 +32,7 @@ class SignUp extends React.Component {
             },
             showPassword: true,
             loggedIn: null,
-            rememberUser: false
+            rememberUser: true
          }
     }
 
@@ -124,7 +124,7 @@ class SignUp extends React.Component {
                         value={this.state.email} 
                         onChange={e=>this.handleSetValue(e)}
                     />
-                    <span>(email will be unique and bla bla @ sybol)</span>
+                    <span>(You can use letters,numbers & periods)</span>
                     { this.state.email !== null && this.state.errors.email===true && <div className='notification_icon'><RiErrorWarningLine color='red'/></div>}
                     { this.state.email !== null && this.state.errors.email===false && <div className='notification_icon'><HiCheck color='blue'/></div>}
                     
@@ -140,7 +140,7 @@ class SignUp extends React.Component {
                         id="pwd"
                         onChange={e=>this.handleSetValue(e)}
                     />
-                    <span>(This is password rules)</span>
+                    <span>(password must be at least 8 characters)</span>
                     { this.state.password !== null && this.state.errors.password===true && <div className='notification_icon'><RiErrorWarningLine color='red'/></div>}
                     { this.state.password !== null && this.state.errors.password===false && <div className='notification_icon'><HiCheck color='blue'/></div>}
                 
@@ -156,7 +156,7 @@ class SignUp extends React.Component {
                         id="c-pwd"
                         onChange={e=>this.handleSetValue(e)}
                     />
-                    <span>(This is password rules)</span>
+                    <span>(password must be at least 8 characters & copy of original password)</span>
                     { this.state.errors.cpassword===true && <div className='notification_icon'><RiErrorWarningLine color='red'/></div>}
                     { this.state.errors.cpassword===false && <div className='notification_icon'><HiCheck color='blue'/></div>}
                 

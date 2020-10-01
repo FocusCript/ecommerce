@@ -8,6 +8,7 @@ import Ribbon from '../ribbon/ribbon';
 import { AiFillPlusCircle } from 'react-icons/ai'
 import { AiOutlineStar, AiTwotoneStar } from 'react-icons/ai'
 import { MdRemoveCircle } from 'react-icons/md'
+import Zoom from 'react-reveal/Zoom';
 
 export default class Books extends Component {
     constructor(props) {
@@ -43,6 +44,7 @@ export default class Books extends Component {
       
     deleteFromCart = async (item)=>{
         await this.props.deleteFromCart(item)
+        await this.props.getCartPrice()
         await this.props.countCart()
     }
 
@@ -117,7 +119,9 @@ export default class Books extends Component {
                     <div className='paginate_wrapper ml-2 cursor-pointer'>
                         <CgMoveRight size='30px' onClick={this.openPages}/>
                     </div>}
-                <div className='books_wrapper'>{this.parsingData()}</div>
+                <Zoom cascade >
+                    <div className='books_wrapper'>{this.parsingData()}</div>
+                </Zoom>
             </div>
         )
     }

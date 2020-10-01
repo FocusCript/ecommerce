@@ -12,7 +12,8 @@ import {DECREMENT_WISHLIST_PRODUCTS} from '../actions/action_types'
 import {GET_CART_COUNTS} from '../actions/action_types'
 import {GET_WISHLIST_COUNTS} from '../actions/action_types'
 import {GET_TOTAL_PRICE_CART} from '../actions/action_types'
-import {GET_TOTAL_PRICE_WISHLIST} from '../actions/action_types'
+import {SELECT_TOP_CATEGORY} from '../actions/action_types'
+import {SEARCH_BOOK} from '../actions/action_types'
 import { data } from '../../data/books'
 
 const initialState = {
@@ -24,7 +25,12 @@ const initialState = {
     totalCountCart: 0,
     totalCountWishList: 0,
     totalPriceCart: 0,
-    totalPriceWishList: 0
+    totalPriceWishList: 0,
+    selectedCategory: {
+        title: '',
+        data: []
+    },
+    searchedBook: []
   };
 
 
@@ -36,7 +42,7 @@ const initialState = {
             clear = clear + price[i]
         }
         }
-        return parseFloat(clear)
+        return parseFloat(clear).toFixed(2)
     }
 /* helper */
 
@@ -105,12 +111,29 @@ const booksReducer = (state = initialState, action)=>{
             let cartPrice = () =>{
                 var total = 0
                 state.cartList.map(i=>{
-                    total += i.cartCounter*stringToInt(i.product_details.price).toFixed(2)
+                    total += i.cartCounter*stringToInt(i.product_details.price)
                 })  
                 return total
             }
             return { ...state, totalPriceCart: cartPrice()}
-        
+
+        case SELECT_TOP_CATEGORY: 
+            state.selectedCategory.data = []
+            state.books.map((subarray)=>{
+                return subarray.product_details.BISAC_Categories.map(item=>{
+                    if(action.payload === item){
+                        state.selectedCategory.data.push(subarray)
+                        state.selectedCategory.title = action.payload
+                    }
+                })
+            })
+            return {...state}
+
+        case SEARCH_BOOK: 
+        const searchedBook = state.books.filter(item=> 
+            item.title.toLowerCase().substring(0, action.payload.length) === action.payload.toLowerCase())
+            return { ...state, searchedBook}
+      
         default: return state
     }
 }

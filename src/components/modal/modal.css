@@ -9,6 +9,21 @@
     cursor: pointer;
 }
 
+.no_items_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.inc_dec_icon{
+    color: rgba(11, 2, 34, 0.747);
+    background: rgba(235, 230, 230, 0.801);
+    border-radius: 50%;
+}
+
 @media (max-width: 991px){
     .mobil_view_none{
         display: none;

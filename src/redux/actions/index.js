@@ -11,7 +11,11 @@ import {    FETCH_BOOKS,
     INCREMENT_WISHLIST_PRODUCTS,
     GET_CART_COUNTS,
     GET_WISHLIST_COUNTS,
-    GET_TOTAL_PRICE_CART    } from './action_types';
+    GET_TOTAL_PRICE_CART,
+    SELECT_TOP_CATEGORY,
+    SIGN_IN,
+    LOGOUT,
+    SEARCH_BOOK    } from './action_types';
 
 
 
@@ -80,4 +84,24 @@ export const countWishList = () =>({
 export const getCartPrice = () =>({
     type: GET_TOTAL_PRICE_CART,
 })
+
+export const selectTopCategory = (payload) =>({
+    type: SELECT_TOP_CATEGORY,
+    payload
+})
+
+export const signIn = (payload) =>({
+    type: SIGN_IN,
+    payload
+})
+
+export const logOut = () =>({
+    type: LOGOUT
+})
+
+export const searchBook = (payload) =>({
+    type: SEARCH_BOOK,
+    payload
+})
+
 

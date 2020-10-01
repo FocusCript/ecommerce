@@ -9,7 +9,7 @@ import validator from 'validator'
 const data = [
     {
         email: 'luckerfocus@mail.ru',
-        password: '199729aaa',
+        password: '12345678',
         id: '29af22lk',
     },
     {
@@ -76,14 +76,15 @@ class SignIn extends React.Component {
             return item.email === this.state.email
         })
        if( !!user && !!this.state.password && user.password === this.state.password){
-            this.setState({...this.state, loggedIn: true})
+            // this.setState({...this.state, loggedIn: true})
+            this.props.signIn({email: user.email, password: user.password, signedIn: true})
             if(this.state.rememberUser){
                 localStorage.setItem('email', user.email)
                 localStorage.setItem('password', user.password)
             }
             console.log('is Valid')
         }else{
-            this.setState({...this.state, loggedIn: false}) 
+            this.props.signIn({email: '', password: '', signedIn: false}) 
             console.log('invalid')
         }    
     }
@@ -108,7 +109,7 @@ class SignIn extends React.Component {
     }
 
     render() { 
-        if (this.state.loggedIn) {
+        if (this.props.signedIn) {
             return <Redirect to="/" />;
           }
         
@@ -126,7 +127,7 @@ class SignIn extends React.Component {
                         value={this.state.email} 
                         onChange={e=>this.handleSetValue(e)}
                     />
-                    <span>(email will be unique and bla bla @ sybol)</span>
+                    <span>(You can use letters,numbers & periods)</span>
                     { this.state.email !== null && this.state.errors.email===true && <div className='notification_icon'><RiErrorWarningLine color='red'/></div>}
                     { this.state.email !== null && this.state.errors.email===false && <div className='notification_icon'><HiCheck color='blue'/></div>}
                     
@@ -142,7 +143,7 @@ class SignIn extends React.Component {
                         id="pwd"
                         onChange={e=>this.handleSetValue(e)}
                     />
-                    <span>(This is password rules)</span> 
+                    <span>(password must be at least 8 characters)</span> 
                     { this.state.password !== null && this.state.errors.password===true && <div className='notification_icon'><RiErrorWarningLine color='red'/></div>}
                     { this.state.password !== null && this.state.errors.password===false && <div className='notification_icon'><HiCheck color='blue'/></div>}
                 

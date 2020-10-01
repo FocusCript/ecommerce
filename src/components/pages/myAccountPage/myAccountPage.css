@@ -1,11 +1,50 @@
-.account_card{
+.account_wrapper{
+    width: 70%;
     margin: 0 auto;
-    width: 400px;
-    height: 50vh;
+    /* background: rgb(111, 196, 161); */
     display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    background: rgba(0, 0, 0, 0.281);
+}
+.account_card{
+  width: 50%;
+  margin: 0 auto;
+  /* background: rgb(175, 138, 138); */
+  border: 1px solid white;
+}
+.account_card b{
+    margin-right: 20px;
+}
+.account_card span{
+    color: rgb(228, 229, 236);
+}
+.account_card span:hover{
+    background-color: rgba(14, 74, 165, 0.493);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
+.account_icon{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form_updater_account{
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 100px;
+}
+
+@media (max-width: 900px){
+    .account_wrapper{
+        flex-direction: column;
+    }
+
+    .account_card{
+        width: 80%;
+        text-align: center;
+      }
+}
 

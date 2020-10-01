@@ -2,18 +2,20 @@ import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { TiShoppingCart } from 'react-icons/ti'
 import { ImStarFull } from 'react-icons/im'
+import { ImFileEmpty } from 'react-icons/im'
+import { MdDeleteForever } from 'react-icons/md'
+import { AiFillPlusCircle } from 'react-icons/ai'
+import { MdRemoveCircle } from 'react-icons/md'
+import { FaCartPlus } from 'react-icons/fa'
 import { Badge, Table } from 'reactstrap'
+import Wobble  from 'react-reveal/Wobble'
+import Jump  from 'react-reveal/Jump'
 import './modal.css'
 
 class ModalList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-          totalCartPrice: 0,
-          totalWishListPrice: 0
-        }
     }
-
 
     stringToInt(price){
       let clear = ''
@@ -60,6 +62,13 @@ class ModalList extends React.Component {
       await this.props.countWishList() 
     }
 
+    addToCartAndRemoveFromWish= async(item)=>{
+      await this.props.addToCart(item)
+      await this.props.countCart()
+      await this.props.getCartPrice()
+      // await this.deleteFromWishList(item)
+    }
+
     
     render() { 
         const { openCart, 
@@ -76,27 +85,27 @@ class ModalList extends React.Component {
            <div>
                { this.props.cart && <div>
                 <div className='icon_box' onClick={openCartModal}>
-                    <TiShoppingCart size='40px' color="black">cart</TiShoppingCart>
+                    <Wobble  spy={totalCountCart}>
+                      <TiShoppingCart size='40px' color="black">cart</TiShoppingCart>
+                    </Wobble>
                     <Badge href="#" color="light" className='badge_counter'>{totalCountCart}</Badge>
                 </div>
                 <Modal isOpen={openCart} toggle={openCartModal} size='lg'>
                     <ModalHeader>
-                      <div className='d-flex align-items-center'>
-                      <h1>Total: {this.props.totalPriceCart}</h1>
-                      </div>
-                    </ModalHeader>
-                    <ModalBody>
-                        <Table striped>
+                      <h1>Cart</h1>
+                      <h3 className='total_cart_price'>Total: {'$'+this.props.totalPriceCart}</h3>
+                    </ModalHeader >
+                    { this.props.cartList.length > 0 && <ModalBody>
+                        <Table borderless hover>
                         <thead>
                               <tr>
                                 <th>#</th>
                                 <th>Title</th>
-                                <th>Author</th>
+                                <th>Image</th>
                                 <th>Count</th>
                                 <th>Price</th>
                                 <th className='mobil_view_none'>Language</th>
-                                <th className='mobil_view_none'>Pages</th>
-                                <th>delete</th>
+                                <th></th>
                               </tr>
                           </thead>
                          { cartList.map((_, i)=>(
@@ -104,72 +113,77 @@ class ModalList extends React.Component {
                               <tr key={_.id}>
                                 <th scope="row">{i+1}</th>
                                 <td>{_.title}</td>
-                                <td>{_.author}</td>
+                                <td><img src={_.image} alt="netu" width='40px'/></td>
                                 <td>
-                                  <div className='d-flex justify-content-around'>
-                                    <button onClick={()=>this.incrementCartProducts(_)}>plus</button>
-                                    <span className='ml-2 mr-2'>{_.cartCounter}</span>
-                                    <button onClick={()=>this.decrementCartProducts(_)}>minus</button>
+                                  <div className='d-flex justify-content-around'>            
+                                    <MdRemoveCircle  onClick={()=>this.decrementCartProducts(_)} className='cursor-pointer inc_dec_icon' size='25px'/>
+                                    <h6 className='ml-2 mr-2'>{_.cartCounter}</h6>
+                                    <AiFillPlusCircle onClick={()=>this.incrementCartProducts(_)} className='cursor-pointer inc_dec_icon' size='25px' />                                  
                                   </div>
                                 </td>
-                                <td>{this.stringToInt(_.product_details.price)*_.cartCounter} $</td>
-                                <td className='mobil_view_none'>{_.product_details.language}</td>
-                                <td className='mobil_view_none'>{_.product_details.pages}</td>
-                                <td><button onClick={()=>this.deleteFromCart(_)}>delete</button></td>        
+                                <td>{this.stringToInt(_.product_details.price).toFixed(2)*_.cartCounter} $</td>
+                                <td className='mobil_view_none'>{_.product_details.language}</td>        
+                                <td><MdDeleteForever size='30px' className='cursor-pointer' onClick={()=>this.deleteFromCart(_)}>delete</MdDeleteForever></td>        
                               </tr>
                             </tbody>
                          ))}
                         </Table>
-                    </ModalBody>
+                    </ModalBody>}
+                    {this.props.cartList.length === 0 && <span className='no_items_wrapper'>
+                      <ImFileEmpty size='40px' color='black'/>
+                      <p>no items</p>
+                    </span>}
                     <ModalFooter>
                         <Button color="primary" onClick={openCartModal}>Do Something</Button>{' '}
                         <Button color="secondary" onClick={openCartModal}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
-            </div>}
+              </div>}
                { this.props.wish && <div>
               <div className='icon_box' onClick={openWishListModal}>
-                  <ImStarFull size='40px' color="red">cart</ImStarFull>
+                  <Jump  spy={totalCountWishList}>
+                    <ImStarFull size='40px' color="red">cart</ImStarFull>
+                  </Jump>
                   <Badge href="#" color="light" className='badge_counter'>{totalCountWishList}</Badge>
                 </div>
               <Modal isOpen={openWishList} toggle={openWishListModal} size='lg'>
-                <ModalHeader>content_title</ModalHeader>
-                <ModalBody>
+                <ModalHeader><h2>My WishList</h2></ModalHeader>
+                { this.props.wishList.length > 0 && <ModalBody>
                         <Table striped>
                         <thead>
                               <tr>
                                 <th>#</th>
                                 <th>Title</th>
                                 <th>Author</th>
-                                <th>Count</th>
+                                <th>Image</th>
                                 <th>Price</th>
                                 <th className='mobil_view_none'>Language</th>
-                                <th className='mobil_view_none'>Pages</th>
-                                <th>delete</th>
+                                <th>AddToCart</th>
+                                <th></th>
                               </tr>
                           </thead>
                          { wishList.map((_, i)=>(
-                            <tbody>
-                              <tr key={_.id}>
-                                <th scope="row">{i+1}</th>
-                                <td>{_.title}</td>
-                                <td>{_.author}</td>
-                                <td>
-                                  <div className='d-flex justify-content-around'>
-                                    <span className='ml-2 mr-2'>{_.wishCounter}</span>
-                                  </div>
-                                </td>
-                                <td>{_.product_details.price}</td>
-                                <td className='mobil_view_none'>{_.product_details.language}</td>
-                                <td className='mobil_view_none'>{_.product_details.pages}</td>
-                                <td><button onClick={()=>this.deleteFromWishList(_)}>delete</button></td>
-                                <td><button onClick={()=>this.incrementWishListProducts(_)}>plus</button></td>
-                                <td><button onClick={()=>this.decrementWishListProducts(_)}>minus</button></td>
-                              </tr>
-                            </tbody>
+                             <tbody>
+                             <tr key={_.id}>
+                               <th scope="row">{i+1}</th>
+                               <td>{_.title}</td>
+                               <td>{_.author}</td>
+                               <td><img src={_.image} alt="netu" width='40px'/></td>                           
+                               <td>{this.stringToInt(_.product_details.price).toFixed(2)*_.wishCounter} $</td>
+                               <td className='mobil_view_none'>{_.product_details.language}</td>  
+                               <td>
+                                  {cartList.findIndex(item=> item.id === _.id) > -1 ? 'alredy added' :  <FaCartPlus onClick={()=>this.addToCartAndRemoveFromWish(_)} className='cursor-pointer' size='30px'/>}
+                                </td>  
+                               <td><MdDeleteForever size='30px' className='cursor-pointer' onClick={()=>this.deleteFromWishList(_)}>delete</MdDeleteForever></td>        
+                             </tr>
+                           </tbody>
                          ))}
                         </Table>
-                    </ModalBody>
+                    </ModalBody>}
+                   {this.props.wishList.length === 0 && <span className='no_items_wrapper'>
+                      <ImFileEmpty size='40px' color='black'/>
+                      <p>no items</p>
+                    </span>}
                 <ModalFooter>
                   <Button color="primary" onClick={openWishListModal}>Do Something</Button>{' '}
                   <Button color="secondary" onClick={openWishListModal}>Cancel</Button>

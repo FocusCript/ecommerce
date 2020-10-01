@@ -1,69 +1,92 @@
 import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
-import { IoIosArrowDropupCircle } from 'react-icons/io'
 import Header from './header/header'
-import Navbar from '../components/navigation/nav.jsx'
+import Navbar from '../components/navigation/nav-container'
 import Banner from './banner/banner.jsx'
-import Tabs from './tabs/tabs.jsx'
+import Tabs from './tabs/tab-container'
 import Footer from './footer/footer.jsx'
 import Help from './pages/helpPage/help.jsx'
-import SignIn from './signIn/signIn';
+import SignIn from './signIn/signIn-container';
 import SignUp from './signUp/signUp';
-import ModalList from './modal/modal-container';
-import MyAccount from './pages/myAccountPage/myAccountPage';
- 
+import MyAccount from './pages/myAccountPage/myAccount-container';
+import { connect } from 'react-redux'
+import TripleIcons from './triple-icons/triple-icons';
+import Order from './pages/orderStatusPage/orderStatusPage';
+
+  
 class Application extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
 
     scrollToTop=()=>{
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
     render() { 
+        const { signedIn } = this.props
         return ( 
             <div>
                 <BrowserRouter>
-                   <div className='navbar_wrapper'>
+                    <div className='navbar_wrapper'>
                         <Navbar/>
-                   </div>
-                    <div className='modal_icons'>
-                        <IoIosArrowDropupCircle size='40px' color='blue' onClick={this.scrollToTop} className='cursor-pointer'/>
-                        <ModalList cart/>
-                        <ModalList wish/>
                     </div>
-                    <Switch>
+                    { signedIn===true && <TripleIcons/> }
+                    { signedIn === true ?  
+                   <Switch>
                         <Route exact path='/'>
                         <div className='mt-3'>
-                            <Header/>
-                            <Banner/>
+                            <Header />
+                            <Banner />
                             <div className='middle_side_wrapper'>
-                                <Tabs/>
+                                <Tabs signedIn/>
                             </div>
                         </div>
                         </Route>
                         <Route exact path='/signin'>
-                            <div className='sigIn_wrapper'><SignIn/></div>
+                            <div className='sigIn_wrapper'><SignIn /></div>
                         </Route>
                         <Route exact path='/signup'>
-                            <div className='signUp_wrapper'><SignUp/></div>
+                            <div className='signUp_wrapper'><SignUp /></div>
                         </Route>
                         <Route exact path='/myAccount'>
-                            <div className='myAccount_wrapper'><MyAccount/></div>
+                            <div className='myAccount_wrapper'><MyAccount /></div>
                         </Route>
                         <Route exact path='/order'>
-                            <div className='order_wrapper mt-3'><h1>OrderStatus Page</h1></div>
+                            <div className='order_wrapper mt-3'><Order/></div>
                         </Route>
                         <Route exact path='/help'>
                             <Help/>
                         </Route>
                     </Switch>
-                    <div className='footer_wrapper_fixed'><Footer/></div>
+                     : 
+                      <Switch>
+                      <Route exact path='/'>
+                        <div className='sigIn_wrapper'><SignIn /></div>
+                      </Route>
+                      <Route exact path='/signin'>
+                          <div className='sigIn_wrapper'><SignIn /></div>
+                      </Route>
+                      <Route exact path='/signup'>
+                          <div className='signUp_wrapper'><SignUp /></div>
+                      </Route>
+                      <Route exact path='*'>
+                          <div className='signUp_wrapper'><SignIn /></div>
+                      </Route>
+                  </Switch>}
+                    <div className='footer_wrapper_fixed'><Footer /></div>
                 </BrowserRouter>
             </div>
          );
     }
 }
+
+
+const mapStateToProps=(state)=>{
+    const { signedIn } = state.userReducer
+    return {
+        signedIn
+    }
+}
+
+// const mapDispatchToProps = (dispatch) => ({
+//     selectTopCategory: (any) => dispatch(selectTopCategory(any)),
+// });
  
-export default Application;
+export default connect(mapStateToProps, null)(Application);

@@ -3,6 +3,12 @@ import './carousel.css';
 import foto1 from '../../../components/book-images/the5wake.gif'
 import foto2 from '../../../components/book-images/susana.gif'
 import foto3 from '../../../components/book-images/palm-beach.gif'
+import foto4 from '../../../components/book-images/wilder.jpg'
+import foto5 from '../../../components/book-images/worldwonders.gif'
+import foto6 from '../../../components/book-images/fallout.gif'
+import foto7 from '../../../components/book-images/pippa.jpg'
+
+
 import {
   Carousel,
   CarouselItem,
@@ -14,19 +20,39 @@ import {
 const items = [
   {
     src: foto1,
-    altText: 'Slide 1',
-    caption: 'Slide 1'
+    altText: '',
+    caption: ''
   },
   {
     src: foto2,
-    altText: 'Slide 2',
-    caption: 'Slide 2'
+    altText: '',
+    caption: ''
   },
   {
     src: foto3,
-    altText: 'Slide 3',
-    caption: 'Slide 3'
-  }
+    altText: '',
+    caption: ''
+  },
+  {
+    src: foto4,
+    altText: '',
+    caption: ''
+  },
+  {
+    src: foto5,
+    altText: '',
+    caption: ''
+  },
+  {
+    src: foto6,
+    altText: '',
+    caption: ''
+  },
+  {
+    src: foto7,
+    altText: '',
+    caption: ''
+  },
 ];
 
 const Carouserl = (props) => {
@@ -58,7 +84,7 @@ const Carouserl = (props) => {
         onExited={() => setAnimating(false)}
         key={item.index+1}
       >
-        <img src={item.src} alt={item.altText} height='300px'/>
+        <img src={item.src} alt={item.altText} className='carousel_img' />
         <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
       </CarouselItem>
     );

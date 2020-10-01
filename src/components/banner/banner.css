@@ -9,32 +9,46 @@
 
 .banner_wrapper .carousel_wrapper{
     width: 60%;
+    display: flex;
+    align-items: center;
     /*height: 304px;*/
-    background: rgb(240, 234, 234);
+    /* background: rgb(240, 234, 234); */
     margin: 0 auto;
 }
 
 .banner_wrapper .adv_wrapper{
     width: 38%;
     /* height: 304px; */
-    background: rgba(201, 218, 207, 0.61);
+    /* background: rgba(201, 218, 207, 0.61); */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 10px;
 }
 
+.banner_wrapper .adv_wrapper img{
+    width: 270px;
+    margin: 0 auto;
+}
+
 @media (max-width: 900px){
-    .banner_wrapper .carousel_wrapper{
-        margin: 0 auto;
+    .banner_wrapper{
+       
+        justify-content: space-around;
     }
+    .banner_wrapper .carousel_wrapper{
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: 20px
+    }
+
     .banner_wrapper .adv_wrapper{
-        width: 100%;
+        width: 40%;
         margin: 0 auto;
     }
 
     .banner_wrapper .adv_wrapper img{
-        width: 60%;
+        width: 170px;
         margin: 0 auto;
     }
 }

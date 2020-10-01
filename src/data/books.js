@@ -6,6 +6,15 @@ import fallout from '../components/book-images/fallout.gif'
 import emergent from '../components/book-images/emergent.jpg'
 import piranes from '../components/book-images/susana.gif'
 import mother from '../components/book-images/mother.jpg'
+import blackSun from '../components/book-images/black_sun.gif'
+import dancing from '../components/book-images/dancing.jpg'
+import marvel from '../components/book-images/marvel.jpg'
+import pippa from '../components/book-images/pippa.jpg'
+import water from '../components/book-images/water.jpg'
+import theEnd from '../components/book-images/the_end.gif'
+import invisible from '../components/book-images/the_invisible.gif'
+import white from '../components/book-images/white_tears.gif'
+import wilder from '../components/book-images/wilder.jpg'
 
 
 export  const data = [
@@ -22,7 +31,7 @@ export  const data = [
             language: 'English',
             type: 'Hardcover',
             EAN_UPC: '1983457154522',
-            BISAC_Categories: ['Coming of Age', 'Girls & Women', 'Family - Siblings', 'classic']
+            BISAC_Categories: ['women', 'classic', 'Medical']
         },
         image: fangirlSrc,
         id: '12er3'
@@ -40,7 +49,7 @@ export  const data = [
             language: 'English',
             type: 'Hardcover',
             EAN_UPC: '9781571313652',
-            BISAC_Categories: ['Personal Memoirs','Essays', 'memory']
+            BISAC_Categories: ['Personal Memoirs','Essays', 'memory', 'Education', 'Medical']
         },
         image:wonderW,
         id: '1235dd'
@@ -58,7 +67,7 @@ export  const data = [
             language: 'English',
             type: 'Hardcover',
             EAN_UPC: '9781982128654',
-            BISAC_Categories: ['Editors', 'Journalists', 'PublishersEmigration & Immigration','women']
+            BISAC_Categories: ['Editors', 'Journalists', 'PublishersEmigration & Immigration','women', 'Sience', 'Medical']
         },
         image: once,
         id: '12se'
@@ -76,7 +85,7 @@ export  const data = [
             language: 'English',
             type: 'Hardcover',
             EAN_UPC: '9781982110567',
-            BISAC_Categories: ['Thrillers - Suspense','Science Fiction - Genetic Engineering', 'Thrillers - Supernatural', 'fantastic']
+            BISAC_Categories: ['Thrillers - Suspense','Science', 'Thrillers - Supernatural', 'fantastic', 'Medical']
         },
         image: institute,
         id: '25tgfh'
@@ -94,7 +103,7 @@ export  const data = [
             language: 'English',
             type: 'Hardcover',
             EAN_UPC: '9781982128517',
-            BISAC_Categories: ['Military - Nuclear Warfare','Editors', 'Journalists', 'Publishers Military - World War II', 'war']
+            BISAC_Categories: ['Military - Nuclear Warfare','Editors', 'Journalists', 'Publishers Military - World War II', 'war', 'fantastic']
         },
         image: fallout,
         id: '2gjnrh'
@@ -112,7 +121,7 @@ export  const data = [
             language: 'English',
             type: 'Paperback',
             EAN_UPC: '9781849352604',
-            BISAC_Categories: ['Political Ideologies - Radicalism','Feminism', 'Feminist Theory', 'political']
+            BISAC_Categories: ['Political Ideologies - Radicalism','Reference', 'Feminist Theory', 'political', 'Health']
         },
         image: emergent,
         id: 'erer2'
@@ -130,7 +139,7 @@ export  const data = [
             language: 'English',
             type: 'Hardcover',
             EAN_UPC: '9781635575637',
-            BISAC_Categories: ['Fantasy - General','Fantasy', 'Dark Fantasy','Literary', 'fantastic']
+            BISAC_Categories: ['Fantasy - General','Fantasy', 'Dark Fantasy','Reference', 'fantastic', 'Medical']
         },
         image: piranes,
         id: 'we2134'
@@ -148,10 +157,190 @@ export  const data = [
             language: 'English',
             type: 'Hardcover',
             EAN_UPC: '9781419742941',
-            BISAC_Categories: ['women', 'classic']
+            BISAC_Categories: ['women', 'classic', 'Cooking']
         },
         image: mother,
         id: '123it'
+    },
+    {
+        title: 'The Invisible',
+        author: 'V. E. Schwab (Author)',
+        description: "Who was your mother before she became a mother?In this remarkable collection, New York Times bestselling novelist Edan Lepucki gathers more than sixty original essays and favorite photographs to explore this question. The daughters in Mothers Before are writers and poets, artists and teachers, and the images and stories they share reveal the lives of women in ways that are vulnerable and true, sometimes funny, sometimes sad, and always moving.Contributors include: Brit Bennett,Jennine Cap Crucet,Jennifer Egan,Angela Garbes,Annabeth Gish,Alison Roman,Lisa See,Danzy Senna,Dana Spiotta,Jia Tolentino",
+        product_details: {
+            price: '$24.80',
+            publisher: 'Tor Books',
+            publishDate: 'April 07, 2020',
+            pages: '448',
+            dimensions: '6.3 X 9.5 X 1.5 inches | 1.4 pounds',
+            language: 'English',
+            type: 'Hardcover',
+            EAN_UPC: '9780765387561',
+            BISAC_Categories: ['women', 'classic', 'Fiction']
+        },
+        image: invisible,
+        id: '123it'
+    },
+    {
+        title: 'Black Sun',
+        author: 'Rebecca Roanhorse (Author)',
+        description: "Who was your mother before she became a mother?In this remarkable collection, New York Times bestselling novelist Edan Lepucki gathers more than sixty original essays and favorite photographs to explore this question. The daughters in Mothers Before are writers and poets, artists and teachers, and the images and stories they share reveal the lives of women in ways that are vulnerable and true, sometimes funny, sometimes sad, and always moving.Contributors include: Brit Bennett,Jennine Cap Crucet,Jennifer Egan,Angela Garbes,Annabeth Gish,Alison Roman,Lisa See,Danzy Senna,Dana Spiotta,Jia Tolentino",
+        product_details: {
+            price: '$25.75',
+            publisher: 'Gallery / Saga Press',
+            publishDate: 'April 07, 2020',
+            pages: '464',
+            dimensions: '6.3 X 9.5 X 1.5 inches | 1.4 pounds',
+            language: 'English',
+            type: 'Hardcover',
+            EAN_UPC: '9781534437678',
+            BISAC_Categories: ['women', 'classic', 'fantastic, Sience, Education']
+        },
+        image: blackSun,
+        id: '123it'
+    },
+    {
+        title: 'White Tears',
+        author: 'Ruby Hamad (Author)',
+        description: "Who was your mother before she became a mother?In this remarkable collection, New York Times bestselling novelist Edan Lepucki gathers more than sixty original essays and favorite photographs to explore this question. The daughters in Mothers Before are writers and poets, artists and teachers, and the images and stories they share reveal the lives of women in ways that are vulnerable and true, sometimes funny, sometimes sad, and always moving.Contributors include: Brit Bennett,Jennine Cap Crucet,Jennifer Egan,Angela Garbes,Annabeth Gish,Alison Roman,Lisa See,Danzy Senna,Dana Spiotta,Jia Tolentino",
+        product_details: {
+            price: '$15.6',
+            publisher: 'Catapult',
+            publishDate: 'April 07, 2020',
+            pages: '304',
+            dimensions: '6.3 X 9.5 X 1.5 inches | 1.4 pounds',
+            language: 'English',
+            type: 'Paperback',
+            EAN_UPC: '9781534437678',
+            BISAC_Categories: ['women', 'Fiction']
+        },
+        image: white,
+        id: '123it'
+    },
+    {
+        title: 'The End of the Day',
+        author: 'Bill Clegg (Author)',
+        description: "Who was your mother before she became a mother?In this remarkable collection, New York Times bestselling novelist Edan Lepucki gathers more than sixty original essays and favorite photographs to explore this question. The daughters in Mothers Before are writers and poets, artists and teachers, and the images and stories they share reveal the lives of women in ways that are vulnerable and true, sometimes funny, sometimes sad, and always moving.Contributors include: Brit Bennett,Jennine Cap Crucet,Jennifer Egan,Angela Garbes,Annabeth Gish,Alison Roman,Lisa See,Danzy Senna,Dana Spiotta,Jia Tolentino",
+        product_details: {
+            price: '$25.75',
+            publisher: 'Catapult',
+            publishDate: 'April 07, 2020',
+            pages: '320',
+            dimensions: '6.3 X 9.5 X 1.5 inches | 1.4 pounds',
+            language: 'English',
+            type: 'Hardcover',
+            EAN_UPC: '9781476798202',
+            BISAC_Categories: ['women', 'Mathematics', 'Computers']
+        },
+        image: theEnd,
+        id: '123it'
+    },
+    {
+        title: 'Clean',
+        author: 'James Hamblin (Author)',
+        description: "Who was your mother before she became a mother?In this remarkable collection, New York Times bestselling novelist Edan Lepucki gathers more than sixty original essays and favorite photographs to explore this question. The daughters in Mothers Before are writers and poets, artists and teachers, and the images and stories they share reveal the lives of women in ways that are vulnerable and true, sometimes funny, sometimes sad, and always moving.Contributors include: Brit Bennett,Jennine Cap Crucet,Jennifer Egan,Angela Garbes,Annabeth Gish,Alison Roman,Lisa See,Danzy Senna,Dana Spiotta,Jia Tolentino",
+        product_details: {
+            price: '$30.2',
+            publisher: 'Riverhead Books',
+            publishDate: 'April 07, 2020',
+            pages: '320',
+            dimensions: '6.3 X 9.5 X 1.5 inches | 1.4 pounds',
+            language: 'English',
+            type: 'Hardcover',
+            EAN_UPC: '9780525538318',
+            BISAC_Categories: ['sience', 'Medical', 'Health']
+        },
+        image: mother,
+        id: '123it'
+    },
+    {
+        title: 'The Marvel',
+        author: 'Roy Thomas (Author)',
+        description: "Who was your mother before she became a mother?In this remarkable collection, New York Times bestselling novelist Edan Lepucki gathers more than sixty original essays and favorite photographs to explore this question. The daughters in Mothers Before are writers and poets, artists and teachers, and the images and stories they share reveal the lives of women in ways that are vulnerable and true, sometimes funny, sometimes sad, and always moving.Contributors include: Brit Bennett,Jennine Cap Crucet,Jennifer Egan,Angela Garbes,Annabeth Gish,Alison Roman,Lisa See,Danzy Senna,Dana Spiotta,Jia Tolentino",
+        product_details: {
+            price: '$20',
+            publisher: 'Riverhead Books',
+            publishDate: 'April 07, 2020',
+            pages: '320',
+            dimensions: '6.3 X 9.5 X 1.5 inches | 1.4 pounds',
+            language: 'English',
+            type: 'Hardcover',
+            EAN_UPC: '9783836577878',
+            BISAC_Categories: ['fantastic', 'war']
+        },
+        image: marvel,
+        id: '123jkit'
+    },
+    {
+        title: 'Pippa',
+        author: 'Erin Yun (Author)',
+        description: "Who was your mother before she became a mother?In this remarkable collection, New York Times bestselling novelist Edan Lepucki gathers more than sixty original essays and favorite photographs to explore this question. The daughters in Mothers Before are writers and poets, artists and teachers, and the images and stories they share reveal the lives of women in ways that are vulnerable and true, sometimes funny, sometimes sad, and always moving.Contributors include: Brit Bennett,Jennine Cap Crucet,Jennifer Egan,Angela Garbes,Annabeth Gish,Alison Roman,Lisa See,Danzy Senna,Dana Spiotta,Jia Tolentino",
+        product_details: {
+            price: '$14',
+            publisher: 'Riverhead Books',
+            publishDate: 'April 07, 2020',
+            pages: '288',
+            dimensions: '6.3 X 9.5 X 1.5 inches | 1.4 pounds',
+            language: 'English',
+            type: 'Hardcover',
+            EAN_UPC: '9781944020262',
+            BISAC_Categories: ['fantastic', 'women', 'Cooking']
+        },
+        image: pippa,
+        id: 'q124edfw'
+    },
+    {
+        title: 'Dancing with Octopus',
+        author: 'Debora Harding (Author)',
+        description: "Who was your mother before she became a mother?In this remarkable collection, New York Times bestselling novelist Edan Lepucki gathers more than sixty original essays and favorite photographs to explore this question. The daughters in Mothers Before are writers and poets, artists and teachers, and the images and stories they share reveal the lives of women in ways that are vulnerable and true, sometimes funny, sometimes sad, and always moving.Contributors include: Brit Bennett,Jennine Cap Crucet,Jennifer Egan,Angela Garbes,Annabeth Gish,Alison Roman,Lisa See,Danzy Senna,Dana Spiotta,Jia Tolentino",
+        product_details: {
+            price: '$24',
+            publisher: 'Bloomsbury Publishing',
+            publishDate: 'April 07, 2020',
+            pages: '384',
+            dimensions: '6.3 X 9.5 X 1.5 inches | 1.4 pounds',
+            language: 'English',
+            type: 'Hardcover',
+            EAN_UPC: '9781635576122',
+            BISAC_Categories: ['fantastic', 'classic', 'women']
+        },
+        image: dancing,
+        id: 'q124edfw'
+    },
+    {
+        title: 'Water at the Roots',
+        author: 'Philip Britts (Author)',
+        description: "Who was your mother before she became a mother?In this remarkable collection, New York Times bestselling novelist Edan Lepucki gathers more than sixty original essays and favorite photographs to explore this question. The daughters in Mothers Before are writers and poets, artists and teachers, and the images and stories they share reveal the lives of women in ways that are vulnerable and true, sometimes funny, sometimes sad, and always moving.Contributors include: Brit Bennett,Jennine Cap Crucet,Jennifer Egan,Angela Garbes,Annabeth Gish,Alison Roman,Lisa See,Danzy Senna,Dana Spiotta,Jia Tolentino",
+        product_details: {
+            price: '$15',
+            publisher: 'Plough Publishing House',
+            publishDate: 'April 07, 2020',
+            pages: '384',
+            dimensions: '6.3 X 9.5 X 1.5 inches | 1.4 pounds',
+            language: 'English',
+            type: 'Paperback',
+            EAN_UPC: '9780874861280',
+            BISAC_Categories: ['Nature', 'Sience', 'Health']
+        },
+        image: water,
+        id: 'q124edfw'
+    },
+    {
+        title: 'Wilder Girls',
+        author: 'Rory Power (Author)',
+        description: "Who was your mother before she became a mother?In this remarkable collection, New York Times bestselling novelist Edan Lepucki gathers more than sixty original essays and favorite photographs to explore this question. The daughters in Mothers Before are writers and poets, artists and teachers, and the images and stories they share reveal the lives of women in ways that are vulnerable and true, sometimes funny, sometimes sad, and always moving.Contributors include: Brit Bennett,Jennine Cap Crucet,Jennifer Egan,Angela Garbes,Annabeth Gish,Alison Roman,Lisa See,Danzy Senna,Dana Spiotta,Jia Tolentino",
+        product_details: {
+            price: '$18',
+            publisher: 'Delacorte Press',
+            publishDate: 'April 07, 2020',
+            pages: '384',
+            dimensions: '6.3 X 9.5 X 1.5 inches | 1.4 pounds',
+            language: 'English',
+            type: 'Hardcover',
+            EAN_UPC: '9780525645580',
+            BISAC_Categories: ['educations', 'Sience', 'women']
+        },
+        image: wilder,
+        id: 'q124edfw'
     },
     
      

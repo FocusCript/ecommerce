@@ -9,6 +9,7 @@ import { OpenCartModal,
     IncrementWishListProducts,
     DecrementWishListProducts,
     countWishList,
+    AddToCart,
     countCart,
     getCartPrice    } from '../../redux/actions/index.js';
 import ModalList from './modal.jsx'
@@ -36,6 +37,7 @@ const mapDispatchToProps=(dispatch)=>({
     decrementCartProducts: (any) => dispatch(DecrementCartProducts(any)),
     incrementWishListProducts: (any) => dispatch(IncrementWishListProducts(any)),
     decrementWishListProducts: (any) => dispatch(DecrementWishListProducts(any)),
+    addToCart: (any) => dispatch(AddToCart(any)),
     countCart: () => dispatch(countCart()),
     countWishList: () => dispatch(countWishList()),
     getCartPrice: () => dispatch(getCartPrice())

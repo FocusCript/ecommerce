@@ -9,3 +9,10 @@
 .cursor-pointer{
     cursor: pointer;
 }
+
+.top_category_item_wapper{
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 14px;
+    line-height: 1.75;
+}

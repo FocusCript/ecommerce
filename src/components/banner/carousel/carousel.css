@@ -1,4 +1,13 @@
 .carousel{
-    width: 300px;
     margin: 0 auto;
+}
+
+.carousel_img{
+    height: 350px
+}
+
+@media (max-width: 900px){
+    .carousel_img{
+        height: 200px
+    }
 }

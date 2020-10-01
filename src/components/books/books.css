@@ -37,6 +37,7 @@
   .books_wrapper .book_wrapper{
     float: left;
     margin-left: 16px;
+    /* background: rgb(199, 174, 174); */
   }
 
   .paginate_wrapper{
@@ -62,8 +63,8 @@
 
   .like_icon{
     position: relative;
-    left: 35px;
-    top: 85px;
+    left: 55px;
+    top: 64px;
     color: rgba(241, 226, 8, 0.932);
     
   }

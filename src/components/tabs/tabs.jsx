@@ -9,6 +9,8 @@ class Tabs extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
+      currentProps: this.props,
+      datas: [],
       activeTab : '5',
       object: {
         classic: [],
@@ -20,7 +22,27 @@ class Tabs extends React.Component {
     }
   }
 
+   scrollTo = (ref) => {
+    if (ref) {
+      ref.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  componentDidUpdate(){
+    if(this.state.currentProps.selectedData !== this.props.selectedData){
+      this.setState({...this.state, currentProps: this.props},()=>{
+        this.toggle('7')
+      })
+    }
+    if(this.props.searchedBook.length > 0 && this.state.currentProps.searchedBook !== this.props.searchedBook){
+      this.setState({...this.state, currentProps: this.props},()=>{
+        this.toggle('6')
+      })
+    }
+  }
+
   componentDidMount(){
+    this.setState({...this.state, currentProps: this.props})
     const { classic, fantastic, war, women} = this.state.object
     data.map((subarray)=>{
       return subarray.product_details.BISAC_Categories.map(item=>{
@@ -39,11 +61,34 @@ class Tabs extends React.Component {
     if(this.state.activeTab !== tab) this.setState({ ...this.state, activeTab: tab});
   }
 
+  choosenCategory=()=>{
+    return (
+      <TabPane tabId="7">
+      <Row>
+        <Col sm="12">
+        { this.state.activeTab==='7' && <Books perPage='5'  data={this.props.selectedData}/>}
+        </Col>
+      </Row>
+      </TabPane>
+    )
+  }
+
+  searchResult=()=>{
+    return (
+      <TabPane tabId="6">
+      <Row>
+        <Col sm="12">
+        { this.state.activeTab==='6' && <Books perPage='16' data={this.props.searchedBook}/>}
+        </Col>
+      </Row>
+      </TabPane>
+    )
+  }
 
   render() { 
     const { activeTab } = this.state
     return (
-      <div className='tabs_wrapper'>
+      <div className='tabs_wrapper' ref={this.state.currentProps.selectedData !== this.props.selectedData ? this.scrollTo : ''}>
         <Nav tabs>
           <NavItem className='cursor-pointer'>
             <NavLink
@@ -85,6 +130,22 @@ class Tabs extends React.Component {
               All
             </NavLink>
           </NavItem>
+          <NavItem className='cursor-pointer'>
+            <NavLink
+              className={classnames({ active: activeTab === '6' })}
+              onClick={() => { this.toggle('6'); }}
+            >
+              {this.props.searchedBook && 'Founded'}
+            </NavLink>
+          </NavItem>
+          <NavItem className='cursor-pointer top_category_item_wapper'>
+            <NavLink
+              className={classnames({ active: activeTab === '7' })}
+              onClick={() => { this.toggle('7'); }}
+            >
+              {this.props.selectedTitle}
+            </NavLink>
+          </NavItem>
         </Nav>
         <TabContent activeTab={activeTab}>
           <TabPane tabId="1">
@@ -122,6 +183,8 @@ class Tabs extends React.Component {
               </Col>
             </Row>
           </TabPane>
+         {this.choosenCategory()}
+         {this.searchResult()}
         </TabContent>
       </div>
     );

@@ -12,7 +12,7 @@ class Help extends React.Component {
                         {
                             req: 'I have a Loyalty Card but cannot log in.',
                             answer: "We've made searching for titles simple but powerful. Begin by  a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'123'
+                            id:'1234g3'
                         },
                         {
                             req: 'I want to create an account.',
@@ -42,22 +42,22 @@ class Help extends React.Component {
                         {
                             req: 'How do I order a Gift Voucher online?',
                             answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'q32354'
+                            id:'q3e52354'
                         },
                         {
                             req: 'I want to order multiple / bulk quantities.',
                             answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'q32354'
+                            id:'q3232k54'
                         },
                         {
                             req: 'I am pre-ordering a product, will you send the order together?',
                             answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'q32354'
+                            id:'q3uk2354'
                         },
                         {
                             req: 'Do you sell eBooks?',
                             answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'q32354'
+                            id:'q32345ik354'
                         },
                     ]
                 },
@@ -67,7 +67,7 @@ class Help extends React.Component {
                         {
                             req: 'What payment options do you allow?',
                             answer: "We'vple but powerful. Begin by  a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'12335dfg'
+                            id:'1225dfg'
                         },
                         {
                             req: 'Can I use my Loyalty credit online?',
@@ -102,17 +102,17 @@ class Help extends React.Component {
                         {
                             req: 'Do you ship outside of Australia??',
                             answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'1243qqq'
+                            id:'123443qqq'
                         },
                         {
                             req: 'How do I track my order?',
                             answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'1243qqq'
+                            id:'1243q35qq'
                         },
                         {
                             req: 'Do you offer Express Post?',
                             answer: "We've made searching  an author, a title, or an ISBN into the search bar at the top of any page. ThriftBooks now offers over 13 million titles but you'll get the results quickly. If you don't see what you want in the results, you can use the filters to look for specific items by Genre, Format (this is where you can search for Large Print), condition, language, and price. From a desktop computer, filters can be found along the left side of your search results. From a tablet, phone, or our mobile app, click Sort & Filter to access and apply filters.",
-                            id:'1243qqq'
+                            id:'1243qqwqq'
                         },
                     ]
                 }
@@ -120,14 +120,16 @@ class Help extends React.Component {
          }
     }
 
-    componentDidMount(){
-        
+    closePrevText=(prevKey)=>{
+        this.setState({...this.state, [prevKey]: false})
     }
 
     handleSwitch = (e)=>{
+        if(this.state.currentOpenedId) this.closePrevText(this.state.currentOpenedId)
         const { id } = e.target
         this.setState({
-            [id]: !this.state[id]
+            [id]: !this.state[id],  
+            currentOpenedId: [id]  
         })
     }
 
@@ -146,7 +148,7 @@ class Help extends React.Component {
                                
                                 <h4  id={item.id} onClick={e=>this.handleSwitch(e)}>{item.req}</h4>
                              </div>
-                                { this.state[item.id] && <p>{item.answer}</p>}
+                                { this.state[item.id] && <p className='card card-body'>{item.answer}</p>}
                           </div>
                        ))}
                    </div>
