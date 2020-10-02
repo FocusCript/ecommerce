@@ -1,10 +1,5 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import { 
-    signIn
-}  from '../../redux/actions/index'
-
+import { signIn }  from '../../redux/actions/index'
 
 import SignIn from './signIn.jsx';
 

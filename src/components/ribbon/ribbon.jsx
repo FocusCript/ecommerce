@@ -3,7 +3,7 @@ import './ribbon.css'
 
 const Ribbon = (props)=>{
     return(
-        <div class="corner-ribbon top-left red shadow">{props.price}</div>
+        <div className="corner-ribbon top-left red shadow">{props.price}</div>
     )
 }
 

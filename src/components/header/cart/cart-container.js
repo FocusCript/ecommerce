@@ -1,4 +1,3 @@
-import React from 'react';
 import CartLayout from './cart.jsx'
 import { connect } from 'react-redux'
 import { OpenCartModal }  from '../../../redux/actions'

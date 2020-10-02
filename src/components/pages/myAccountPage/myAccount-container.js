@@ -1,4 +1,3 @@
-import React from 'react';
 import MyAccount from './myAccountPage.jsx'
 import { connect } from 'react-redux'
 import { logOut } from '../../../redux/actions/index'

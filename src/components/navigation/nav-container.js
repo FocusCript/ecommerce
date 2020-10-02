@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from './nav.jsx'
 import { connect } from 'react-redux'
 import { logOut } from '../../redux/actions/index'

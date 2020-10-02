@@ -2,7 +2,6 @@ import React from 'react';
 import { RiShoppingCartFill } from 'react-icons/ri'
 import './cart.css'
 
-
 class CartLayout extends React.Component {
     constructor(props) {
         super(props);

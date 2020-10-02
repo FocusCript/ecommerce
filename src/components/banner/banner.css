@@ -1,54 +1,26 @@
 .banner_wrapper{
-    max-width: 1020px;
-    /* background: rgb(219, 203, 203); */
-    /* height: 328px; */
+    max-width: 1020px; 
     padding: 10px;
     margin: 0 auto;
-    display: flex;
+    height: 220px;
+    background: rgba(0, 0, 0, 0.158);
+    margin-top: 5px;
 }
 
-.banner_wrapper .carousel_wrapper{
-    width: 60%;
-    display: flex;
+ .banner_wrapper .carousel_wrapper{
+    width: 80%;
     align-items: center;
-    /*height: 304px;*/
-    /* background: rgb(240, 234, 234); */
     margin: 0 auto;
+    margin-top: 10px;
 }
 
 .banner_wrapper .adv_wrapper{
-    width: 38%;
-    /* height: 304px; */
-    /* background: rgba(201, 218, 207, 0.61); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
+   position: relative;
+   top: 0;
+   right: 0;
 }
 
 .banner_wrapper .adv_wrapper img{
-    width: 270px;
+    width: 180px;
     margin: 0 auto;
-}
-
-@media (max-width: 900px){
-    .banner_wrapper{
-       
-        justify-content: space-around;
-    }
-    .banner_wrapper .carousel_wrapper{
-        width: 70%;
-        margin: 0 auto;
-        margin-bottom: 20px
-    }
-
-    .banner_wrapper .adv_wrapper{
-        width: 40%;
-        margin: 0 auto;
-    }
-
-    .banner_wrapper .adv_wrapper img{
-        width: 170px;
-        margin: 0 auto;
-    }
 }

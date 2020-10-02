@@ -11,7 +11,7 @@ class Wishes extends React.Component {
         return ( 
             <div className='wish_wrapper cursor-pointer' onClick={this.props.openWishListModal} >
                 <BsStarFill className='wishes_icon'/>
-            <div className='badge-counter'><span class="badge badge-danger text-light">{this.props.totalCountWishList}</span></div>
+            <div className='badge-counter'><span className="badge badge-danger text-light">{this.props.totalCountWishList}</span></div>
                 <h5>Wishes</h5>
             </div>
          );

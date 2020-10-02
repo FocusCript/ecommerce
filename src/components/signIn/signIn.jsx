@@ -118,7 +118,7 @@ class SignIn extends React.Component {
                <h4>SignIn</h4>
                 <form onSubmit={e=>{this.handleSubmit(e)}}>
                 <div className="form-group">
-                    <label for="email">Email:</label>
+                    <label htmlFor="email">Email:</label>
                     <input
                         name='email' 
                         type="email" 
@@ -134,7 +134,7 @@ class SignIn extends React.Component {
                     
                 </div>
                 <div className="form-group">
-                    <label for="pwd">Password:</label>
+                    <label htmlFor="pwd">Password:</label>
                     <input
                         name='password' 
                         type={this.state.showPassword ? "text" : 'password'} 

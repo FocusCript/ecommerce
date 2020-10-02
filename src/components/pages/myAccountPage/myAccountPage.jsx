@@ -32,12 +32,12 @@ class MyAccount extends React.Component {
                        <div><button className='btn btn-outline-danger w-50 mt-2' onClick={this.logOut}>Logout</button></div>
                     </div>
                     <div className='account_card mt-5'>
-                        <h5><b>First name: </b> <i>**No added**</i></h5>
-                        <h5><b>Last name: </b> <i>**No added**</i></h5>
-                        <h5><b>Email: </b> <i>**No added**</i></h5>
-                        <h5><b>Country: </b> <i>**No added**</i></h5>
-                        <h5><b>Adress: </b> <i>**No added**</i></h5>
-                        <h5><b>Phone: </b> <i>**No added**</i></h5>
+                        <h5><b>First name: </b> <i>Empty</i></h5>
+                        <h5><b>Last name: </b> <i>Empty</i></h5>
+                        <h5><b>Email: </b> <i>Empty</i></h5>
+                        <h5><b>Country: </b> <i>Empty</i></h5>
+                        <h5><b>Adress: </b> <i>Empty</i></h5>
+                        <h5><b>Phone: </b> <i>Empty</i></h5>
                         <div><span className='mt-4 cursor-pointer p-1'>Change Password</span></div>
                     </div>
                 </div>

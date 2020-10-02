@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { 
@@ -10,7 +9,6 @@ import {
     countWishList,
     getCartPrice
 }  from '../../redux/actions/index'
-
 
 import Books from './books.jsx';
 

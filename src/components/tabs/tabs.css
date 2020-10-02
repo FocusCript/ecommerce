@@ -1,7 +1,7 @@
 .tabs_wrapper{
     margin-left: 8px;
     margin-top: 12px;
-    margin-bottom: 60px;
+    margin-bottom: 130px;
     width: 100%;
     background: rgba(197, 172, 172, 0.219);
 }
@@ -15,4 +15,10 @@
     font-weight: bolder;
     font-size: 14px;
     line-height: 1.75;
+}
+
+@media (max-width: 900px){
+    .tabs_wrapper{
+        margin-bottom: 20px;
+    }
 }

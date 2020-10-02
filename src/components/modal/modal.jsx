@@ -13,10 +13,6 @@ import Jump  from 'react-reveal/Jump'
 import './modal.css'
 
 class ModalList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     stringToInt(price){
       let clear = ''
       for (let i = 0; i < price.length; i++) {

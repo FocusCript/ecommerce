@@ -1,14 +1,14 @@
 import React from 'react';
 import Adv from './adv/adv';
 import './banner.css';
-import Carousel from './carousel/carousel'
+import { SliderComponent } from './carousel/carousel';
 
 class Banner extends React.Component {
     render() { 
         return ( 
-            <div className='banner_wrapper'>
+            <div className='banner_wrapper d-flex align-items-center'>
                 <div className='carousel_wrapper'>
-                    <Carousel/>
+                    <SliderComponent/>
                 </div>
                 <div className='adv_wrapper'>
                     <Adv/>
